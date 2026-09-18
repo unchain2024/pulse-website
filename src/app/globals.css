@@ -1,0 +1,58 @@
+/* Pulse by UNCHAIN — global stylesheet.
+ *
+ * The site is a port of a single-file prototype whose look depends on a specific
+ * cascade of style layers. Those layers are imported below in their original
+ * order and left unmodified; edit the layer a rule came from, never the order.
+ *
+ * Tailwind's preflight is deliberately NOT imported: the prototype ships its own
+ * reset, and preflight would change the rendered design. The theme and utility
+ * layers are imported so Tailwind utilities and the tokens below are available.
+ */
+
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@import "../styles/01-base.css";
+@import "../styles/02-redesign.css";
+@import "../styles/03-interactive.css";
+@import "../styles/04-fonts.css";
+@import "../styles/05-granola.css";
+@import "../styles/06-brand.css";
+@import "../styles/07-v6.css";
+@import "../styles/08-v7.css";
+@import "../styles/09-responsive.css";
+
+/* Design tokens, exposed to Tailwind. These reference the custom properties the
+ * layers above define, so a token change in a layer flows through to utilities. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-panel-3: var(--panel-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-dash: var(--dash);
+  --color-hair: var(--hair);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-brand: var(--brand);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-lime: var(--lime);
+  --color-btn: var(--btn);
+  --color-btn-ink: var(--btn-ink);
+  --font-sans: var(--sans);
+  --font-serif: var(--serif);
+  --font-sora: var(--sora);
+  --shadow-pulse: var(--shadow);
+  --shadow-pulse-sm: var(--shadow-sm);
+  --container-pulse: var(--max);
+  --spacing-gutter: var(--gutter);
+}

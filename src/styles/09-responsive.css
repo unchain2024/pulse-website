@@ -1,0 +1,4 @@
+/* Late responsive overrides that shipped inline in the prototype body.
+   Ported verbatim from the Pulse single-file prototype — do not reorder these layers. */
+@media (max-width:820px){.sec-grid{grid-template-columns:1fr!important}}
+@media (max-width:820px){.careers-grid{grid-template-columns:1fr!important}}
