@@ -1,0 +1,5 @@
+/* Self-hosted Roboto and Noto Sans JP (SIL Open Font License).
+   Ported verbatim from the Pulse single-file prototype — do not reorder these layers. */
+/* Roboto and Noto Sans JP, SIL Open Font License. */
+@font-face{font-family:'Roboto';font-weight:100 900;font-style:normal;font-display:swap;src:url(/fonts/roboto-1.woff) format('woff')}
+@font-face{font-family:'Noto Sans JP';font-weight:100 900;font-style:normal;font-display:swap;src:url(/fonts/noto-sans-jp-2.woff) format('woff')}
