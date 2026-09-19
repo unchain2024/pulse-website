@@ -81,7 +81,7 @@ export function Block3() {
             <p>
               {t("prepBriefJotLine")}
             </p>
-            <Link className="btn btn-line btn-sm" href={`/${locale}/notepad`} style={{ marginTop: "16px" }}>
+            <Link className="btn btn-line btn-sm" href={`/${locale}`} style={{ marginTop: "16px" }}>
               {t("seeNotepad")}
             </Link>
           </div>

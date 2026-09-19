@@ -21,7 +21,7 @@ export function V6Customization() {
           <p>
             {t("reviewToolsDataFields")}
           </p>
-          <Link className="text-link" href={`/${locale}/demo`}>
+          <Link className="text-link" href={`/${locale}/contact`}>
             {t("discussSetup")}
           </Link>
         </div>

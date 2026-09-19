@@ -75,7 +75,7 @@ export function Block2() {
             <ul>
               <li>
                 {t.rich("ifHaveMoreQuestions", {
-                  a: (chunks: ReactNode) => <Link className="link" href={`/${locale}/demo`}>{chunks}</Link>,
+                  a: (chunks: ReactNode) => <Link className="link" href={`/${locale}/contact`}>{chunks}</Link>,
                 })}
               </li>
             </ul>

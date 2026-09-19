@@ -25,7 +25,7 @@ export function V6PlansSection() {
                 span: (chunks: ReactNode) => <span>{chunks}</span>,
               })}
             </div>
-            <Link className="btn btn-line" href={`/${locale}/waitlist`}>
+            <Link className="btn btn-line" href={`/${locale}/contact`}>
               {t("startFreeTrial")}
             </Link>
             <ul>
@@ -55,7 +55,7 @@ export function V6PlansSection() {
                 span: (chunks: ReactNode) => <span>{chunks}</span>,
               })}
             </div>
-            <Link className="btn btn-dark" href={`/${locale}/waitlist`}>
+            <Link className="btn btn-dark" href={`/${locale}/contact`}>
               {t("getBusiness")}
             </Link>
             <ul>
@@ -88,7 +88,7 @@ export function V6PlansSection() {
                 span: (chunks: ReactNode) => <span>{chunks}</span>,
               })}
             </div>
-            <Link className="btn btn-line" href={`/${locale}/demo`}>
+            <Link className="btn btn-line" href={`/${locale}/contact`}>
               {t("contactUs2")}
             </Link>
             <ul>

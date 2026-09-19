@@ -133,7 +133,7 @@ export function Block3() {
           <p className="small" style={{ marginTop: "16px", textAlign: "center" }}>
             {t.rich("interestedButDonT", {
               br: () => <br />,
-              a: (chunks: ReactNode) => <Link className="link" href={`/${locale}/demo`}>{chunks}</Link>,
+              a: (chunks: ReactNode) => <Link className="link" href={`/${locale}/contact`}>{chunks}</Link>,
             })}
           </p>
         </div>

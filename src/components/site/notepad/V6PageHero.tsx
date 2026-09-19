@@ -24,7 +24,7 @@ export function V6PageHero() {
         </p>
         <div className="btns">
           {t.rich("startFreeTrialIntegrations", {
-            a: (chunks: ReactNode) => <Link className="btn btn-dark" href={`/${locale}/waitlist`}>{chunks}</Link>,
+            a: (chunks: ReactNode) => <Link className="btn btn-dark" href={`/${locale}/contact`}>{chunks}</Link>,
             a2: (chunks: ReactNode) => <Link className="btn btn-line" href={`/${locale}/integrations`}>{chunks}</Link>,
           })}
         </div>

@@ -19,8 +19,8 @@ export function V6End() {
         </div>
         <div className="btns">
           {t.rich("startFreeTrialBook", {
-            a: (chunks: ReactNode) => <Link className="btn btn-dark" href={`/${locale}/waitlist`}>{chunks}</Link>,
-            a2: (chunks: ReactNode) => <Link className="btn btn-line" href={`/${locale}/demo`}>{chunks}</Link>,
+            a: (chunks: ReactNode) => <Link className="btn btn-dark" href={`/${locale}/contact`}>{chunks}</Link>,
+            a2: () => null,
           })}
         </div>
       </div>

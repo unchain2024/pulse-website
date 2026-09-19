@@ -10,7 +10,7 @@ export function GOpening() {
     <section className="g-opening" data-g-opening="">
       <div className="g-opening-copy">
         <div className="g-hero-copy">
-          <Link className="g-chip" href={`/${locale}/waitlist`}>
+          <Link className="g-chip" href={`/${locale}/contact`}>
             {t.rich("betaPulseTakesNext", {
               span: (chunks: ReactNode) => <span>{chunks}</span>,
               span2: (chunks: ReactNode) => <span aria-hidden="true">{chunks}</span>,
@@ -28,9 +28,9 @@ export function GOpening() {
           </p>
           <div className="g-hero-actions">
             {t.rich("getStartedFreeSee", {
-              a: (chunks: ReactNode) => <Link className="btn btn-dark" href={`/${locale}/waitlist`}>{chunks}</Link>,
+              a: (chunks: ReactNode) => <Link className="btn btn-dark" href={`/${locale}/contact`}>{chunks}</Link>,
               span: (chunks: ReactNode) => <span aria-hidden="true">{chunks}</span>,
-              a2: (chunks: ReactNode) => <Link className="g-demo-link" href={`/${locale}/demo`}>{chunks}</Link>,
+              a2: () => null,
             })}
           </div>
           <p className="g-availability">
@@ -102,9 +102,9 @@ export function GOpening() {
         <div className="g-collage pulse-collage" aria-hidden="true">
           <img
             className="pulse-hero-art"
-            data-asset="pulse-blue-art"
+            data-asset="pulse-editorial-landscape"
             alt=""
-            src="/assets/pulse-blue-art.png"
+            src="/assets/pulse-editorial-landscape.png"
           />
         </div>
         <div className="pulse-ready-card">
@@ -221,16 +221,16 @@ export function GOpening() {
             <div className="pulse-call-portraits">
               <div className="pulse-call-person person-0">
                 <img
-                  data-asset="pulse-presentation-faces"
+                  data-asset="pulse-editorial-portraits"
                   alt={t("participantPresentation")}
-                  src="/assets/pulse-presentation-faces.png"
+                  src="/assets/pulse-editorial-portraits.png"
                 />
               </div>
               <div className="pulse-call-person person-1">
                 <img
-                  data-asset="pulse-presentation-faces"
+                  data-asset="pulse-editorial-portraits"
                   alt={t("participantBPresentation")}
-                  src="/assets/pulse-presentation-faces.png"
+                  src="/assets/pulse-editorial-portraits.png"
                 />
               </div>
             </div>

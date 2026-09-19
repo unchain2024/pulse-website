@@ -1,3 +1,4 @@
+import { WorkflowPreview } from "./WorkflowPreview";
 import type { ReactNode } from "react";
 import { useTranslations, useLocale } from "next-intl";
 
@@ -15,9 +16,9 @@ export function GMeetings() {
         </h2>
         <nav className="g-stage-nav" aria-label={t("beforeDuringAfter")}>
           {t.rich("beforeMeetingMeetingAfter", {
-            a: (chunks: ReactNode) => <a href="#v7-home-ja-stage-0" data-g-stage="0" aria-current="true">{chunks}</a>,
-            a2: (chunks: ReactNode) => <a href="#v7-home-ja-stage-1" data-g-stage="1" aria-current="false">{chunks}</a>,
-            a3: (chunks: ReactNode) => <a href="#v7-home-ja-stage-2" data-g-stage="2" aria-current="false">{chunks}</a>,
+            a: (chunks: ReactNode) => <a href={`#v7-home-${locale}-stage-0`} data-g-stage="0" aria-current="true">{chunks}</a>,
+            a2: (chunks: ReactNode) => <a href={`#v7-home-${locale}-stage-1`} data-g-stage="1" aria-current="false">{chunks}</a>,
+            a3: (chunks: ReactNode) => <a href={`#v7-home-${locale}-stage-2`} data-g-stage="2" aria-current="false">{chunks}</a>,
           })}
         </nav>
         <div className="g-stage-content">
@@ -36,7 +37,7 @@ export function GMeetings() {
               {t("useCalendarEventsCustomer")}
             </p>
             <div className="g-stage-screen">
-              <div className="ui-demo" data-view="brief" />
+              <WorkflowPreview stage={0} />
             </div>
           </article>
           <article
@@ -54,11 +55,11 @@ export function GMeetings() {
               {t("transcribeAudioDeviceKeep")}
             </p>
             <div className="g-stage-screen">
-              <div className="ui-demo" data-view="live" />
+              <WorkflowPreview stage={1} />
             </div>
           </article>
           <article
-            className="g-meeting-stage v7-post-meeting"
+            className="g-meeting-stage"
             id={locale === "en" ? "v7-home-en-stage-2" : "v7-home-ja-stage-2"}
             data-g-stage-panel="2"
           >
@@ -71,59 +72,8 @@ export function GMeetings() {
             <p>
               {t("organizeAgreementsOpenQuestions")}
             </p>
-            <div className="v7-post-choices" role="group" aria-label={t("afterMeetingFeatures")}>
-              <button type="button" data-post-view="actions" aria-pressed="false">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect x="5" y="3" width="14" height="18" rx="2" />
-                  <path d="M9 8h6m-6 4h6m-6 4h4" />
-                </svg>
-                {t("actions")}
-              </button>
-              <button type="button" data-post-view="email" aria-pressed="false">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M4 12h16m-6-6 6 6-6 6" />
-                </svg>
-                {t("draftEmail")}
-              </button>
-              <button type="button" data-post-view="plan" aria-pressed="false">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect x="3" y="5" width="18" height="16" rx="2" />
-                  <path d="M8 2v6m8-6V2M3 11h18m-13 5h4" />
-                </svg>
-                {t("draftProjectPlan")}
-              </button>
-            </div>
             <div className="g-stage-screen">
-              <div
-                className="ui-demo"
-                data-view="notes"
-                data-with-plan="true"
-                data-locale={locale === "en" ? "en" : "ja"}
-              />
+              <WorkflowPreview stage={2} />
             </div>
           </article>
         </div>
