@@ -5,9 +5,15 @@ Next.js 16 (App Router) · React 19 · TypeScript (strict) · Tailwind CSS v4 ·
 ```bash
 pnpm install
 pnpm dev        # http://localhost:3000 → redirects to /ja
+pnpm dev:local  # http://127.0.0.1:3100 — isolated local editing preview
 pnpm build
 pnpm typecheck
 ```
+
+For this local checkout, use `pnpm dev:local`. It uses port 3100 to avoid
+other copies on port 3000 and checks for file changes once per second to avoid
+file-watcher limits. Changes still refresh automatically in the browser.
+Open `/en` or `/ja` to choose the preview language.
 
 Locales: `ja` (default) and `en`. Every route is prerendered for both.
 
@@ -93,3 +99,14 @@ note that its parser has no self-closing tag form, so a line break is written
   embedded. Earlier style layers still name Newsreader, Instrument Sans and Sora
   in their font stacks, but `07-v6.css` overrides those, so nothing renders in
   them today.
+
+## Website previews and contact
+
+The meeting, sharing, email, and connector interfaces are interactive marketing
+examples using fictional data. Their buttons update local preview state; they do
+not send email or write to external tools. The contact form validates the entered
+fields and opens a mail draft for review and sending. It has no submission API.
+
+Use `pnpm exec next build --webpack` for the verified production-build path.
+Nature imagery and illustrated participants are generated assets, and the Pulse
+symbol is the supplied SVG recolored blue.

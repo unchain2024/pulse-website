@@ -17,8 +17,8 @@ export function Block5() {
         </p>
         <div className="btns">
           {t.rich("downloadFreeBookDemo", {
-            a: (chunks: ReactNode) => <Link className="btn btn-dark" href={`/${locale}/waitlist`}>{chunks}</Link>,
-            a2: (chunks: ReactNode) => <Link className="btn btn-line" href={`/${locale}/demo`}>{chunks}</Link>,
+            a: (chunks: ReactNode) => <Link className="btn btn-dark" href={`/${locale}/contact`}>{chunks}</Link>,
+            a2: () => null,
           })}
         </div>
       </div>

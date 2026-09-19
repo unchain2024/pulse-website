@@ -1,20 +1,2 @@
-import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
-
-import { DemoPage } from "@/components/site/demo";
-import { pageMetadata } from "@/lib/metadata";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  return pageMetadata(locale, "demo");
-}
-
-export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  return <DemoPage />;
-}
+import {redirect} from "next/navigation";
+export default async function Page({params}:{params:Promise<{locale:string}>}){const {locale}=await params;redirect(`/${locale}/contact`);}
