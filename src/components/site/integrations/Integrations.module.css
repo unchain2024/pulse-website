@@ -1,0 +1,12 @@
+.catalog { padding: 24px 0 96px; }
+.catalogHeading { font-size: 18px; font-weight: 500; margin-bottom: 28px; color: #52616d; }
+.connectors { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); list-style: none; padding: 0; margin: 0; border-top: 1px solid #e2e7eb; }
+.connectors li { display: flex; align-items: center; gap: 14px; min-height: 92px; padding: 16px 12px; border-bottom: 1px solid #e2e7eb; font-size: 15px; font-weight: 500; color: #273b49; }
+.connectors img { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; }
+@media (max-width: 1000px) { .connectors { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+@media (max-width: 760px) {
+ .catalog { padding: 16px 0 56px; } .catalogHeading { font-size: 16px; }
+ .connectors { grid-template-columns: repeat(2, minmax(0,1fr)); }
+ .connectors li { min-height: 76px; font-size: 13px; padding: 12px 6px; gap: 10px; }
+ .connectors img { width: 26px; height: 26px; }
+}
