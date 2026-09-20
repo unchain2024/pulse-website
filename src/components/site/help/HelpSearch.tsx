@@ -108,7 +108,7 @@ export function HelpSearch({ total, children }: { total: number; children: React
                   <br />
                   {t("noResultsHint")}
                   <br />
-                  <Link className="text-link" href={`/${locale}/demo`}>
+                  <Link className="text-link" href={`/${locale}/contact`}>
                     {t("contact")}
                   </Link>
                 </div>

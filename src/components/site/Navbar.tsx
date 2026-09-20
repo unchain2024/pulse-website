@@ -1,3 +1,4 @@
+import { PulseMark } from "./PulseMark";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
@@ -10,24 +11,10 @@ export function Navbar() {
     <header className="nav">
       <div className="wrap">
         <Link className="logo" href={`/${locale}`} aria-label={t("pulseUnchain")}>
-          <span className="mark" aria-hidden="true">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#fff"
-              strokeWidth="2.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M3 12h4l2.5-6 3 12 2.5-6H21" />
-            </svg>
-          </span>
+          <PulseMark/>
           {t("pulse")}
         </Link>
         <nav className="pill-nav" aria-label={t("mainNavigation")}>
-          <Link href={`/${locale}/notepad`}>
-            {t("product")}
-          </Link>
           <details>
             <summary>
               {t("solutions")}
@@ -54,10 +41,8 @@ export function Navbar() {
           </Link>
         </nav>
         <div className="nav-right">
-          <Link className="txt" href={`/${locale}/demo`}>
-            {t("bookDemo")}
-          </Link>
-          <Link className="fbtn line xs" href={`/${locale}/waitlist`}>
+
+          <Link className="fbtn line xs" href={`/${locale}/contact`}>
             {t("getStarted")}
           </Link>
           <span className="lang-sw" role="group" aria-label={t("language")}>

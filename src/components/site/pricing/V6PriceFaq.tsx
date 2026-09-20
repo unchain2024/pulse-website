@@ -35,7 +35,7 @@ export function V6PriceFaq() {
             </summary>
             <div className="a">
               {t.rich("reviewTeamSizeTools", {
-                a: (chunks: ReactNode) => <Link href={`/${locale}/demo`}>{chunks}</Link>,
+                a: (chunks: ReactNode) => <Link href={`/${locale}/contact`}>{chunks}</Link>,
               })}
             </div>
           </details>

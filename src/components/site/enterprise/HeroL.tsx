@@ -21,7 +21,7 @@ export function HeroL() {
           <p className="sub">
             {t("pulseCapturesWhatMatters")}
           </p>
-          <Link className="btn btn-dark" href={`/${locale}/demo`}>
+          <Link className="btn btn-dark" href={`/${locale}/contact`}>
             {t("talkSales")}
           </Link>
         </div>

@@ -46,7 +46,7 @@ export function HelpChrome({ children }: { children: React.ReactNode }) {
     <div id="help-app" data-dark={dark ? "true" : undefined}>
       <div className="help-bar">
         <div className="wrap">
-          <Link href={`/${locale}`}>
+          <Link href={`/${locale}/help`}>
             Pulse / <span>{t("breadcrumbHelp")}</span>
           </Link>
           <div className="help-tools">
@@ -64,7 +64,7 @@ export function HelpChrome({ children }: { children: React.ReactNode }) {
             <button className="print-help" type="button" onClick={() => window.print()}>
               {t("print")}
             </button>
-            <Link href={`/${locale}/demo`}>{t("contact")}</Link>
+            <Link href={`/${locale}/contact`}>{t("contact")}</Link>
           </div>
         </div>
       </div>
