@@ -22,7 +22,7 @@ type Params = { locale: string; slug: string[] };
 
 export function generateStaticParams() {
   const articles = allSlugs().map((slug) => slug.split("/"));
-  const cats = Object.keys(categories).map((key) => ["category", key]);
+  const cats = Object.keys(categories("ja")).map((key) => ["category", key]);
   return routing.locales.flatMap((locale) =>
     [...articles, ...cats].map((slug) => ({ locale, slug }))
   );
@@ -33,14 +33,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const t = await getTranslations({ locale, namespace: "site.help" });
 
   if (slug[0] === "category") {
-    const name = categories[slug[1]];
+    const name = categories(locale)[slug[1]];
     return { title: name ? `${name} — Pulse ${t("breadcrumbHelp")}` : t("title") };
   }
 
-  const article = getArticle(slug.join("/"));
+  const article = getArticle(slug.join("/"), locale);
   return {
-    title: article ? `${substitute(article.title)} — Pulse ${t("breadcrumbHelp")}` : t("notFound"),
-    description: article ? substitute(article.description) : undefined,
+    title: article ? `${substitute(article.title, locale)} — Pulse ${t("breadcrumbHelp")}` : t("notFound"),
+    description: article ? substitute(article.description, locale) : undefined,
   };
 }
 
@@ -52,9 +52,9 @@ export default async function HelpArticlePage({ params }: { params: Promise<Para
   // #help/category/<key> was its own view in the prototype.
   if (slug[0] === "category") {
     const key = slug[1];
-    const name = categories[key];
+    const name = categories(locale)[key];
     if (!name) notFound();
-    const items = articlesInCategory(key);
+    const items = articlesInCategory(key, locale);
 
     return (
       <section className="help-home">
@@ -63,12 +63,12 @@ export default async function HelpArticlePage({ params }: { params: Promise<Para
             {t("backToHelp")}
           </Link>
           <h1>{name}</h1>
-          <p className="help-desc">{categoryDescription(key)}</p>
+          <p className="help-desc">{categoryDescription(key, locale)}</p>
           <div className="help-results">
             {items.map((article) => (
               <Link className="help-result" key={article.slug} href={`/${locale}/help/${article.slug}`}>
-                <h3>{substitute(article.title)}</h3>
-                <p>{substitute(article.description)}</p>
+                <h3>{substitute(article.title, locale)}</h3>
+                <p>{substitute(article.description, locale)}</p>
               </Link>
             ))}
           </div>
@@ -78,10 +78,10 @@ export default async function HelpArticlePage({ params }: { params: Promise<Para
   }
 
   const key = slug.join("/");
-  const article = getArticle(key);
+  const article = getArticle(key, locale);
   if (!article) notFound();
 
-  const { prev, next } = neighbours(key);
+  const { prev, next } = neighbours(key, locale);
   const html = prepareArticleHtml(article.html, locale);
 
   return (
@@ -90,14 +90,14 @@ export default async function HelpArticlePage({ params }: { params: Promise<Para
         <Link className="side-search-link" href={`/${locale}/help`}>
           {t("searchHomeLink")}
         </Link>
-        {groups
+        {groups(locale)
           .filter((group) => group.slugs.length)
           .map((group) => (
             <div key={group.id}>
               <h3>{group.name}</h3>
               {group.slugs
                 .flatMap((s) => {
-                  const a = getArticle(s);
+                  const a = getArticle(s, locale);
                   return a ? [{ slug: s, article: a }] : [];
                 })
                 .map(({ slug: s, article: a }) => (
@@ -107,7 +107,7 @@ export default async function HelpArticlePage({ params }: { params: Promise<Para
                     aria-current={s === key ? "page" : undefined}
                     href={`/${locale}/help/${s}`}
                   >
-                    {substitute(a.title)}
+                    {substitute(a.title, locale)}
                   </Link>
                 ))}
             </div>
@@ -119,29 +119,29 @@ export default async function HelpArticlePage({ params }: { params: Promise<Para
           <Link href={`/${locale}/help`}>{t("breadcrumbHelp")}</Link>
           {" / "}
           <Link href={`/${locale}/help/category/${article.category}`}>
-            {categories[article.category] ?? ""}
+            {categories(locale)[article.category] ?? ""}
           </Link>
         </div>
-        <h1 tabIndex={-1}>{substitute(article.title)}</h1>
-        <p className="help-desc">{substitute(article.description)}</p>
+        <h1 tabIndex={-1}>{substitute(article.title, locale)}</h1>
+        <p className="help-desc">{substitute(article.description, locale)}</p>
 
         <ArticleBody html={html} />
 
         <div className="help-article-bottom">
           {prev ? (
-            <Link href={`/${locale}/help/${prev.slug}`}>← {substitute(prev.title)}</Link>
+            <Link href={`/${locale}/help/${prev.slug}`}>← {substitute(prev.title, locale)}</Link>
           ) : (
             <span />
           )}
           {next ? (
-            <Link href={`/${locale}/help/${next.slug}`}>{substitute(next.title)} →</Link>
+            <Link href={`/${locale}/help/${next.slug}`}>{substitute(next.title, locale)} →</Link>
           ) : (
             <span />
           )}
         </div>
         <div className="help-article-footer">
           {t("lastUpdated")}
-          {helpUpdated}
+          {helpUpdated(locale)}
         </div>
       </article>
 
@@ -149,7 +149,7 @@ export default async function HelpArticlePage({ params }: { params: Promise<Para
         <h2>{t("tocTitle")}</h2>
         {(article.toc ?? []).map((item) => (
           <a key={item.id} href={`#${item.id}`}>
-            {substitute(item.text)}
+            {substitute(item.text, locale)}
           </a>
         ))}
       </aside>
