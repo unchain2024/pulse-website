@@ -23,3 +23,72 @@ body.g-scrolled .nav>.wrap{border:1.5px solid #bdcbd5;box-shadow:0 4px 16px #1d3
 .g-paper-content{overflow:hidden!important}.ud-workspace,.feature-story-preview .ud-workspace{overflow:visible!important;height:auto!important;max-height:none!important}.ud-app-tabs,.mx-tablist{flex-wrap:wrap;overflow:visible}.showcase-track{flex-wrap:wrap;overflow:visible}.help-sidebar,.help-toc{height:auto;max-height:none;overflow:visible}.help-content pre{white-space:pre-wrap;overflow-wrap:anywhere;overflow:visible}.tbl-wrap,.mx-table,.v6-table-scroll{overflow:visible}.tbl-wrap table,.mx-table table,.v6-table-scroll table{min-width:0!important;table-layout:fixed;width:100%}.tbl-wrap td,.mx-table td,.v6-table-scroll td{overflow-wrap:anywhere}
 main textarea{field-sizing:content;overflow:hidden!important;resize:none;max-height:none!important}main textarea[readonly]{height:auto!important}
 html.g-scrolled .nav>.wrap{border:1.5px solid #b8c8d4;box-shadow:0 4px 16px #1d3d5110}
+
+/* Nav dropdown: the '⌄' arrow is kept, but the summary is a centred flex row
+   and the glyph gets its own box, so it no longer hangs below the text baseline. */
+.pill-nav > .nav-drop > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  border-radius: 8px;
+  transition: color .15s ease;
+}
+.pill-nav > .nav-drop > summary:hover,
+.pill-nav > .nav-drop[open] > summary { color: var(--brand); }
+.pill-nav > .nav-drop > summary:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 4px;
+}
+.pill-nav > .nav-drop > summary::after {
+  margin-left: 0;
+  display: block;
+  flex: none;
+  font-size: 15px;
+  line-height: 1;
+  /* U+2304's ink straddles the baseline (2px up, 3px down at 15px), while the
+     label's caps sit 11px above it. Measured shift to match optical centres. */
+  transform: translateY(-.43em);
+  transition: transform .18s ease, color .15s ease;
+}
+/* Open: the 180deg turn is about the box centre, which flips the ink to the
+   other side of it, so the open state needs its own offset (+5.5px), not -6.5. */
+.pill-nav > .nav-drop[open] > summary::after { transform: translateY(.37em) rotate(180deg); }
+.pill-nav > .nav-drop > summary:hover::after,
+.pill-nav > .nav-drop[open] > summary::after { color: currentColor; }
+
+/* The panel hangs from the label rather than a hand-tuned negative offset, and
+   the gap between summary and panel stays hoverable so it doesn't flicker. */
+.nav-drop > .nav-pop {
+  top: calc(100% + 10px);
+  left: 0;
+  width: 248px;
+  padding: 8px;
+  gap: 1px;
+}
+.nav-drop > .nav-pop::before {
+  content: "";
+  position: absolute;
+  inset: -10px 0 100%;
+}
+.nav-drop > .nav-pop a {
+  color: var(--ink-2);
+  transition: background .15s ease, color .15s ease;
+}
+.nav-drop > .nav-pop a:hover,
+.nav-drop > .nav-pop a:focus-visible { background: var(--panel); color: var(--brand); }
+.nav-drop[open] > .nav-pop { animation: nav-pop-in .16s ease-out both; }
+@keyframes nav-pop-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* In the burger menu the panel is inline, so drop the desktop-only trimmings. */
+@media (max-width: 899px) {
+  .nav-drop > .nav-pop { top: auto; width: 100%; animation: none; }
+  .nav-drop > .nav-pop::before { content: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pill-nav > .nav-drop > summary::after,
+  .nav-drop[open] > .nav-pop { transition: none; animation: none; }
+}

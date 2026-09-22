@@ -15,7 +15,7 @@ export function Navbar() {
           {t("pulse")}
         </Link>
         <nav className="pill-nav" aria-label={t("mainNavigation")}>
-          <details>
+          <details className="nav-drop">
             <summary>
               {t("solutions")}
             </summary>
