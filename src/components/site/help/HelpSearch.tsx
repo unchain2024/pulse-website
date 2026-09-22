@@ -33,9 +33,10 @@ export function HelpSearch({ total, children }: { total: number; children: React
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
       try {
-        const response = await fetch(`/api/help/search?q=${encodeURIComponent(q)}`, {
-          signal: controller.signal,
-        });
+        const response = await fetch(
+          `/api/help/search?q=${encodeURIComponent(q)}&locale=${encodeURIComponent(locale)}`,
+          { signal: controller.signal }
+        );
         const body = (await response.json()) as { results: Hit[] };
         setResults(body.results);
       } catch {
@@ -47,7 +48,7 @@ export function HelpSearch({ total, children }: { total: number; children: React
       window.clearTimeout(timer);
       controller.abort();
     };
-  }, [query]);
+  }, [query, locale]);
 
   // ⌘K / Ctrl+K focuses search, as it did in the prototype.
   useEffect(() => {
