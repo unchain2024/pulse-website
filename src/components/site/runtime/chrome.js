@@ -27,9 +27,21 @@ export function init() {
     });
   });
 
-  on(document, "click", (e) => {
-    if (e.target.closest(".nav details")) return;
+  const closeNavDropdowns = () =>
     document.querySelectorAll(".nav details[open]").forEach((d) => d.removeAttribute("open"));
+
+  on(document, "click", (e) => {
+    // A link inside the panel navigates client-side, so close it explicitly.
+    if (e.target.closest(".nav details") && !e.target.closest(".nav-pop a")) return;
+    closeNavDropdowns();
+  });
+
+  on(document, "keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const open = document.querySelector(".nav details[open]");
+    if (!open) return;
+    closeNavDropdowns();
+    open.querySelector("summary")?.focus();
   });
 
   // The burger toggles .nav.open in shell.js; keep aria in step with it.
