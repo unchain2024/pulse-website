@@ -161,9 +161,6 @@ export function GOpening() {
                 </svg>
                 {t("textText")}
               </span>
-              <span className="g-demo-label">
-                {t("demo")}
-              </span>
             </div>
             <div className="g-paper-content">
               <textarea className="g-raw-notes" aria-label={t("editMeetingNotes")} spellCheck="false">
@@ -279,12 +276,6 @@ export function GOpening() {
             </div>
           </div>
         </div>
-        <button type="button" className="g-motion-toggle" aria-pressed="false">
-          {t.rich("pauseAnimation", {
-            span: (chunks: ReactNode) => <span aria-hidden="true">{chunks}</span>,
-            span2: (chunks: ReactNode) => <span data-g-motion-label="">{chunks}</span>,
-          })}
-        </button>
       </div>
     </section>
   );

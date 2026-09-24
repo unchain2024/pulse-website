@@ -11,8 +11,12 @@
  }
 }
 @media (min-width: 1100px) {
- .g-opening { max-width: 1600px; width: calc(100% - 112px); padding-inline: 0; column-gap: 64px; }
+ .g-opening { max-width: 1140px; width: calc(100% - 120px); padding-inline: 0; column-gap: 64px; }
 }
+
+/* The opening keeps the same gutters as the editorial sections below it. */
+@media (max-width: 1000px) { .g-opening { width: calc(100% - 64px); } }
+@media (max-width: 700px) { .g-opening { width: calc(100% - 40px); } }
 
 .fgrid.footer-essential{grid-template-columns:repeat(3,1fr);gap:48px;padding-bottom:36px}.footer-legal{display:flex;gap:24px;padding:0 0 24px;font-size:12px;color:#718799}.contact-page{display:grid;grid-template-columns:1fr 1fr;gap:80px;padding-top:150px;padding-bottom:100px;max-width:1100px}.contact-page h1{font-size:42px;margin:20px 0}.contact-page p{color:#6d8496;line-height:1.8}.contact-page a{display:inline-block;margin-top:24px;color:#286da5}.contact-page form{padding:32px;border:1px solid #dce7ef;border-radius:18px}.contact-page label{display:block;font-size:13px;margin-bottom:20px}.contact-page input,.contact-page textarea{display:block;box-sizing:border-box;width:100%;border:1px solid #d4e1eb;border-radius:8px;padding:12px;margin-top:8px;font:inherit;color:#19364b;background:#fcfdfe}.contact-page form p{font-size:12px}.v7-workflow .g-stage-screen{height:auto;overflow:visible}@media(max-width:700px){.fgrid.footer-essential{gap:28px;grid-template-columns:repeat(2,1fr)}.contact-page{grid-template-columns:1fr;gap:28px;padding-top:100px}.contact-page form{padding:22px}}
 body .nav>.wrap{max-width:1140px}
