@@ -7,6 +7,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { ImageDialog } from "@/components/site/ImageDialog";
+import { ChatWidget } from "@/components/site/chat/ChatWidget";
 import { SiteRuntime } from "@/components/site/SiteRuntime";
 import { routing } from "@/i18n/routing";
 
@@ -59,6 +60,7 @@ export default async function LocaleLayout({
             <Footer />
           </div>
           <ImageDialog />
+          <ChatWidget />
           <SiteRuntime />
         </NextIntlClientProvider>
       </body>

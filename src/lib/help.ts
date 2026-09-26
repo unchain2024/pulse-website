@@ -7,7 +7,7 @@ export type HelpArticle = {
   category: string;
   description: string;
   html: string;
-  toc?: Array<{ id: string; text: string }>;
+  toc?: Array<{ id: string; text: string; level?: number }>;
 };
 
 type HelpData = {
@@ -97,6 +97,11 @@ export function getArticle(slug: string, locale: string): HelpArticle | undefine
 }
 
 /** Slugs are shared across locales, so routes generate once from the source corpus. */
+/** Every article for a locale, so other modules read the corpus through here rather than the JSON. */
+export function articleEntries(locale: string): Array<[string, HelpArticle]> {
+  return Object.entries(corpus(locale).articles).filter(([slug]) => slug !== "index");
+}
+
 export function allSlugs(): string[] {
   return Object.keys(CORPUS.ja.articles).filter((slug) => slug !== "index");
 }
