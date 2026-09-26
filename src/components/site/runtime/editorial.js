@@ -82,7 +82,7 @@ export function init() {
    tabs.querySelectorAll('button').forEach(b=>_on(b, 'click',()=>{stopAuto();if(b.dataset.gNote==='raw'){raw.value=c.note;show('raw')}else finish()}));
    return c;
   });
-  const homes=Array.from(document.querySelectorAll('.granola-home,.v6-product'));
+  const homes=Array.from(document.querySelectorAll('.editorial-home,.v6-product'));
   function active(home){return !!home&&home.classList.contains('on')&&!!home.closest('.lang')&&home.closest('.lang').classList.contains('lang-'+doc.lang)&&!document.body.classList.contains('help-mode')}
   function current(){return controllers.find(c=>active(c.opening.closest('.page')))}
   function step(now){raf=0;if(!enabled||document.hidden)return;const c=current();if(!c)return;const r=c.opening.getBoundingClientRect();if(r.bottom<=0||r.top>=window.innerHeight)return;c.frame(now);raf=_raf(step)}
