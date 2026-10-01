@@ -7,7 +7,7 @@ import { useLocale } from "next-intl";
 import { init as initShell } from "./runtime/shell";
 import { init as initChrome } from "./runtime/chrome";
 import { init as initInteractive } from "./runtime/interactive";
-import { init as initGranola } from "./runtime/granola";
+import { init as initEditorial } from "./runtime/editorial";
 import { init as initBrand } from "./runtime/brand";
 import { init as initV6 } from "./runtime/v6";
 import { init as initV7 } from "./runtime/v7";
@@ -20,7 +20,7 @@ const RUNTIMES: Array<() => Teardown> = [
   initShell,
   initChrome,
   initInteractive,
-  initGranola,
+  initEditorial,
   initBrand,
   initV6,
   initV7,

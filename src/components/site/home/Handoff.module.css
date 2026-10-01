@@ -1,1 +1,29 @@
-.section{padding:100px 0;background:#fff;scroll-margin-top:100px}.section>div{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;align-items:center}.copy h2{font-size:clamp(30px,3.2vw,46px);line-height:1.4;letter-spacing:-.04em;margin:20px 0;color:#23455c}.copy p{font-size:14px;line-height:1.95;color:#7b909f;max-width:440px;margin-bottom:24px}.copy .emphasis{color:#3e6783;font-size:16px}.diagram{padding:30px 35px;border:1px solid #e2eaf0;border-radius:12px;background:#fff}.label{font-size:10px;letter-spacing:.1em;color:#8299aa;display:block;text-align:center;margin-bottom:20px}.aiRow{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.aiRow>div{border:1px solid #e1e8ee;border-radius:8px;padding:16px 10px;text-align:center}.aiRow img{width:34px;height:34px;object-fit:contain;margin:auto}.aiRow span{display:block;font-size:12px;margin-top:10px;color:#56758c}.roots{display:flex;justify-content:space-around;height:30px;margin:0 16%;border-bottom:1px solid #bdd0dd}.roots i{border-left:1px solid #bdd0dd}.exchange{display:flex;justify-content:center;align-items:center;gap:18px;padding:18px 0;color:#7c9aac;font-size:10px}.exchange b{font-size:10px;color:#39759c;border:1px solid #d7e6f0;border-radius:4px;padding:5px 9px}.layer{background:#f0f7fb;border:1px solid #bcd5e5;border-radius:9px;padding:25px;text-align:center}.pulse{font-size:27px;font-weight:600;color:#2d729f}.layer h3{font-size:13px;color:#547e99;font-weight:500;margin:10px 0 23px}.layer>div{display:flex;justify-content:center;gap:12px}.layer>div>span{font-size:10px;color:#6b8aa0;border-left:1px solid #cadde9;padding-left:12px}.layer>div>span:first-child{border:0;padding:0}.inputArrow{text-align:center;color:#9bb4c6;font-size:25px;margin:13px}.data{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:17px}.data img{width:23px;height:23px;object-fit:contain}.data span{flex-basis:100%;text-align:center;font-size:11px;color:#8aa0af}@media(max-width:1000px){.section>div{gap:40px}.diagram{padding:25px 20px}}@media(max-width:760px){.section{padding:60px 0}.section>div{grid-template-columns:1fr;gap:30px}.copy h2{font-size:30px}.diagram{padding:24px 16px}.aiRow{gap:12px}.exchange{gap:10px;font-size:9px}.layer{padding:22px 12px}.layer>div{gap:8px}.layer>div>span{font-size:9px;padding-left:8px}}
+.section{padding:100px 0;background:#fff;scroll-margin-top:100px}.section>div{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;align-items:center}.copy h2{font-size:clamp(30px,3.2vw,46px);line-height:1.4;letter-spacing:-.04em;margin:20px 0;color:#23455c}.copy p{font-size:14px;line-height:1.95;color:#7b909f;max-width:440px;margin-bottom:24px}.copy .emphasis{color:#3e6783;font-size:16px}
+.diagram{padding:34px 38px 30px;border:1px solid #e6edf3;border-radius:16px;background:#fff;box-shadow:0 1px 3px #1d3d5108}
+.label{display:block;text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8fa6b6;margin-bottom:20px}
+.aiRow{display:grid;grid-template-columns:repeat(3,1fr);gap:4%}
+.aiRow>div{display:flex;flex-direction:column;align-items:center;gap:12px;padding:18px 10px;border:1px solid #e6edf3;border-radius:14px;background:#fff;box-shadow:0 1px 2px #1d3d510a}
+.aiRow img{width:32px;height:32px;object-fit:contain}
+.aiRow span{font-size:12.5px;color:#54748c}
+/* Dotted connectors. preserveAspectRatio="none" lets the fan stretch to the
+   column width; non-scaling-stroke keeps the dashes even while it does. */
+.fan{display:block;width:100%;height:54px;color:#c8d9e5}
+.exchange{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;color:#8aa4b5;font-size:10px}
+.exchange>span:first-child{justify-self:end;text-align:right}
+.exchange>span:last-child{justify-self:start;text-align:left}
+.exchange b{font-size:10px;font-weight:600;letter-spacing:.08em;color:#2f6f99;background:#fff;border:1px solid #cfe1ee;border-radius:6px;padding:7px 11px}
+.layer{margin-top:16px;padding:26px 22px;background:#f2f8fc;border:1px solid #cfe2ef;border-radius:14px;text-align:center}
+.pulse{font-size:26px;font-weight:600;color:#2d729f}
+.layer h3{font-size:13px;color:#547e99;font-weight:500;margin:10px 0 20px}
+.layer>div{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 14px}
+.layer>div>span{font-size:10px;color:#6b8aa0;border-left:1px solid #cadde9;padding-left:14px}
+.layer>div>span:first-child{border:0;padding:0}
+.inputArrow{text-align:center;color:#9bb4c6;font-size:20px;line-height:1;margin:16px 0 2px}
+/* Five columns across the same span the lower fan ends on, so every tile sits
+   under its own dotted line. */
+.dataIcons{display:grid;grid-template-columns:repeat(5,1fr);justify-items:center;width:72%;margin:0 auto}
+.dataTile{display:grid;place-items:center;width:42px;height:42px;border:1px solid #e6edf3;border-radius:12px;background:#fff;box-shadow:0 1px 2px #1d3d510a}
+.dataTile img{width:22px;height:22px;object-fit:contain}
+.data>span{display:block;text-align:center;font-size:11px;color:#8aa0af;margin-top:16px}
+@media(max-width:1000px){.section>div{gap:40px}.diagram{padding:26px 22px}}
+@media(max-width:760px){.section{padding:60px 0}.section>div{grid-template-columns:1fr;gap:30px}.copy h2{font-size:30px}.diagram{padding:22px 14px}.aiRow>div{padding:14px 6px;gap:9px}.aiRow img{width:26px;height:26px}.aiRow span{font-size:11px}.fan{height:42px}.exchange{gap:8px;font-size:9px}.layer{padding:20px 12px}.layer>div{gap:8px}.layer>div>span{font-size:9px;padding-left:9px}.dataTile{width:34px;height:34px;border-radius:10px}.dataTile img{width:18px;height:18px}}
