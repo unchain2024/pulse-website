@@ -26,13 +26,17 @@ src/app/[locale]/page.tsx       home
 src/app/[locale]/<page>/        one route per page (20 of them)
 src/app/[locale]/help/          help centre: home, categories, 88 articles
 src/app/api/help/search/        full-text article search
+src/app/api/chat/               the assistant: retrieval + answer composition
 src/middleware.ts               next-intl locale routing
 
 src/components/site/            one folder per page, one file per section
 src/components/site/runtime/    the prototype's behaviour, as startable modules
+src/components/site/chat/       the Ask Pulse widget
 src/messages/{ja,en}.json       every user-visible string, key-for-key identical
 src/styles/01-…09-*.css         the prototype's style layers, in cascade order
 src/data/help.json              help article corpus (server only)
+src/data/site-pages.ts          the 20 marketing routes, described for the assistant
+src/lib/chat/                   the assistant's index, ranking and answer composer
 public/assets, public/fonts     images and self-hosted fonts
 ```
 
@@ -91,14 +95,63 @@ note that its parser has no self-closing tag form, so a line break is written
 - **The request form composes a `mailto:` draft** to `tharada@the-unchain.com`
   rather than posting anywhere. That is what the prototype did. If this should
   become a real submission, `src/components/site/runtime/chrome.js` is the place.
-- **Help centre articles are Japanese only.** The corpus has no English
-  translations, so `/en/help` shows the help chrome in English and the article
-  text in Japanese. The chrome strings are in `site.help.*` and ready for the
-  articles to follow.
+- **`help.en.json`'s `text` field is Japanese.** The `html`, `title`,
+  `description` and `toc` fields are properly translated, but `text` (the
+  pre-stripped plain text) is a byte-identical copy of the Japanese one, as are
+  `anchors` and `tokenFields`. Nothing in the site reads those, so the bug is
+  invisible today — but `text` is the obvious field to feed a search index, and
+  doing so would silently serve Japanese to English readers. The assistant
+  derives its plain text from `html` instead. Fixing the generator would let
+  `src/lib/chat/chunks.ts` drop that work.
+- **Twelve `{{TOKEN}}` placeholders are unfilled.** `ADDRESS`, `REP`, `PHONE`,
+  `INVOICE_NO`, `DATE`, `EFFECTIVE_DATE`, `POSTAL_CODE`, `APPLICATION_PERIOD`,
+  `REFUND_POLICY_SEATS`, `SYSTEM_REQUIREMENTS`, `REFERRAL_BONUS` and
+  `PRICE_ENTERPRISE` resolve to prose like "Please contact us" or
+  "(system requirements)", which reads as an answer while saying nothing. The
+  assistant drops passages built mostly from them; filling them in is the
+  cheapest content win available.
 - **Only Roboto and Noto Sans JP are self-hosted**, which is what the prototype
   embedded. Earlier style layers still name Newsreader, Instrument Sans and Sora
   in their font stacks, but `07-v6.css` overrides those, so nothing renders in
   them today.
+
+## Ask Pulse — the site assistant
+
+A floating widget in the bottom-left corner of every page. It answers questions
+about Pulse and links to the page that covers them.
+
+**It does not call a language model, and costs nothing to run.** It finds the
+passage in the help centre that best matches the question and shows that passage
+verbatim, so every word it displays is a word already published on this site. It
+cannot rephrase or combine two articles; when nothing matches well enough it says
+so and offers the help centre and the contact page rather than guessing.
+
+How a question becomes an answer:
+
+1. `src/lib/chat/tokenise.ts` turns text into match terms. Japanese is not written
+   with spaces, so CJK runs become overlapping character bigrams while Latin runs
+   stay whole words (plus a plural form and a five-character prefix, so "change"
+   meets "Changing"). Indexing and querying use the same function — that symmetry
+   is what makes matching work at all.
+2. `src/lib/chat/chunks.ts` splits all 87 articles at their `<h2>`/`<h3>`
+   headings, giving roughly a thousand passages per locale, each with a deep link
+   to its own heading. The 20 marketing routes from `src/data/site-pages.ts` join
+   the same index so "where do I find pricing" has somewhere to point.
+3. `src/lib/chat/retrieval.ts` ranks them with BM25, weighting headings above
+   titles and rewarding a heading whose rare words the question supplies.
+4. `src/lib/chat/answer.ts` picks the reply: a written answer for the handful of
+   questions everyone asks, otherwise the sentences or steps of the best passage,
+   otherwise an honest "I could not find that".
+
+The index is built on first use and kept per locale — about a tenth of a second,
+paid once per server process rather than during the build.
+
+While tuning, `GET /api/chat?q=…&locale=ja` returns the raw ranking as JSON. It is
+disabled in production, and it also reports any drift between
+`src/data/site-pages.ts` and the route directories.
+
+Adding a route under `src/app/[locale]` means adding it to `src/data/site-pages.ts`
+too, or the assistant will never suggest it.
 
 ## Website previews and contact
 
