@@ -207,7 +207,7 @@
         "betaPulseTakesNext": "<span>BETA</span>会議の前後を進める、Pulse <span2>→</span2>",
         "meetingPrepNotesFollow": "議事録から始まる<br></br>コンテキスト<br></br>AIエージェント",
         "aiNotepadConnectsConversations": "会話と社内情報から、仕事の背景を理解。<br></br>ブリーフ、議事録、次のアクションまで。",
-        "getStartedFreeSee": "<a>無料で始める <span>↓</span></a>",
+        "getStartedFreeSee": "<a>無料で始める <span>→</span></a>",
         "availableMacosWindows": "macOS・Windows対応",
         "conversationsNotesOrganizedTogether": "会話とメモを、<br></br>ノートに整理。",
         "usesComputerAudioNo": "端末の音声を使うから、ボットの招待は不要。",
@@ -235,7 +235,8 @@
         "toggleDemoCamera": "デモのカメラを切り替える",
         "closeCallPreview": "通話のプレビューを閉じる",
         "text3": "⌁",
-        "pauseAnimation": "<span>Ⅱ</span><span2>動きを止める</span2>"
+        "pauseAnimation": "<span>Ⅱ</span><span2>動きを止める</span2>",
+        "downloadFree": "<a>無料でダウンロード <span>↓</span></a>"
       },
       "gMeetings": {
         "beforeDuringAfterEvery": "会議の前も、<br></br>会議の最中も、<br></br>そのあとも。",
@@ -1443,8 +1444,11 @@
       "email": "会社メール",
       "message": "ご相談内容",
       "initial": "無料トライアルについて相談したいです。",
-      "send": "メールを作成する",
-      "note": "メールアプリで下書きが開きます。内容をご確認のうえ、送信してください。",
+      "send": "送信する",
+      "note": "通常1営業日以内にメールでご返信します。",
+      "sending": "送信中…",
+      "sent": "送信しました。担当者より折り返しご連絡いたします。",
+      "error": "送信に失敗しました。時間をおいて再度お試しいただくか、メールでお問い合わせください。",
       "direct": "メールでもお問い合わせいただけます。",
       "personal": "個人メール（任意）",
       "teamSize": "チームの人数",
@@ -1777,6 +1781,29 @@
         "mailGreeting": "鈴木様\n",
         "attachment": "会議の要点・次の対応.pdf"
       }
+    },
+    "download": {
+      "title": "Pulseをダウンロード",
+      "eyebrow": "PULSE / DOWNLOAD",
+      "intro": "チームについて簡単に教えてください。macOS・Windows向けのPulseデスクトップアプリをご利用いただけます。",
+      "benefitOne": "無料で開始。クレジットカードは不要です。",
+      "benefitTwo": "ボットを招待せず、いつもの会議アプリで。",
+      "benefitThree": "ノートは非公開。必要な文脈だけを選んで共有。",
+      "process": "ご入力後の流れ",
+      "processBody": "フォームを送信すると、このページにmacOS・Windows版のダウンロードリンクが表示されます。セットアップのご案内もメールでお送りします。",
+      "formTitle": "Pulseアプリを入手する",
+      "initial": "デスクトップでPulseを試してみたいです。",
+      "send": "送信する",
+      "note": "送信後すぐにダウンロードリンクが表示されます。",
+      "readyTitle": "準備ができました。Pulseをダウンロードしてください。",
+      "readyBody": "お使いのプラットフォームを選んでください。セットアップは約1分で完了し、会社メールでサインインできます。",
+      "windows": "Windows版をダウンロード",
+      "windowsHint": "Windows 10以降 · .exe",
+      "mac": "macOS版をダウンロード",
+      "macHint": "macOS 12以降 · .dmg",
+      "recommended": "この端末におすすめ",
+      "needHelp": "インストールでお困りですか？",
+      "helpLink": "ヘルプセンターを見る"
     }
   }
 }

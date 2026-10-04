@@ -30,3 +30,5 @@
 .pulse-call-person{aspect-ratio:1/1}.pulse-call-person img{top:-65.12%}
 .pulse-ready-card{bottom:-3%;left:-35px}.feature-story-preview textarea:not(:focus){overflow:hidden}
 @media(max-width:899px){.pulse-ready-card{bottom:-2%;left:5px}}
+
+.g-hero-actions{flex-wrap:wrap}.g-hero-actions .btn.g-download-btn{background:#fff;border:1px solid #bfd5e7;color:#246ba8}.g-hero-actions .btn.g-download-btn:hover{background:#f1f7fc;border-color:#246ba8}

@@ -32,6 +32,10 @@ export function GOpening() {
               span: (chunks: ReactNode) => <span aria-hidden="true">{chunks}</span>,
               a2: () => null,
             })}
+            {t.rich("downloadFree", {
+              a: (chunks: ReactNode) => <Link className="btn btn-line g-download-btn" href={`/${locale}/download`}>{chunks}</Link>,
+              span: (chunks: ReactNode) => <span aria-hidden="true">{chunks}</span>,
+            })}
           </div>
           <p className="g-availability">
             {t("availableMacosWindows")}

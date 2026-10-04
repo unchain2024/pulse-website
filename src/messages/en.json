@@ -207,7 +207,7 @@
         "betaPulseTakesNext": "<span>BETA</span>Pulse takes the next step <span2>→</span2>",
         "meetingPrepNotesFollow": "The context AI agent<br></br>that starts with<br></br>meeting notes.",
         "aiNotepadConnectsConversations": "Understand the context behind your work.<br></br>From conversations and company knowledge to briefs, notes, and next actions.",
-        "getStartedFreeSee": "<a>Get started free <span>↓</span></a>",
+        "getStartedFreeSee": "<a>Get started free <span>→</span></a>",
         "availableMacosWindows": "Available for macOS and Windows",
         "conversationsNotesOrganizedTogether": "Conversations and notes,<br></br>organized together.",
         "usesComputerAudioNo": "Uses your computer audio. No bot to invite.",
@@ -235,7 +235,8 @@
         "toggleDemoCamera": "Toggle demo camera",
         "closeCallPreview": "Close call preview",
         "text3": "⌁",
-        "pauseAnimation": "<span>Ⅱ</span><span2>Pause animation</span2>"
+        "pauseAnimation": "<span>Ⅱ</span><span2>Pause animation</span2>",
+        "downloadFree": "<a>Download free <span>↓</span></a>"
       },
       "gMeetings": {
         "beforeDuringAfterEvery": "Before, during,<br></br>and after<br></br>every meeting.",
@@ -1443,8 +1444,11 @@
       "email": "Work email",
       "message": "How can we help?",
       "initial": "I’d like to learn about a free trial.",
-      "send": "Prepare email",
-      "note": "This opens a draft in your email app. Review it there before sending.",
+      "send": "Submit",
+      "note": "We reply by email, usually within one business day.",
+      "sending": "Sending…",
+      "sent": "Thanks! Your message has been sent. We will get back to you shortly.",
+      "error": "Something went wrong. Please try again or email us directly.",
       "direct": "You can also email us directly.",
       "personal": "Personal email (optional)",
       "teamSize": "Team size",
@@ -1777,6 +1781,29 @@
         "mailGreeting": "Hi Suzuki,",
         "attachment": "Meeting summary & next steps.pdf"
       }
+    },
+    "download": {
+      "title": "Download Pulse",
+      "eyebrow": "PULSE / DOWNLOAD",
+      "intro": "Tell us a little about your team and get the Pulse desktop app for macOS and Windows.",
+      "benefitOne": "Free to start. No credit card needed.",
+      "benefitTwo": "No bot to invite. Use your usual meeting apps.",
+      "benefitThree": "Private notes. Share only the context you choose.",
+      "process": "What happens next",
+      "processBody": "Fill in the form and the download links for macOS and Windows appear right here. We will also email you setup tips and answer any questions.",
+      "formTitle": "Get the Pulse app",
+      "initial": "I’d like to try Pulse on my desktop.",
+      "send": "Submit",
+      "note": "The download links appear right after you submit.",
+      "readyTitle": "You’re all set. Download Pulse.",
+      "readyBody": "Pick your platform below. Setup takes about a minute, and you can sign in with your work email.",
+      "windows": "Download for Windows",
+      "windowsHint": "Windows 10 or later · .exe",
+      "mac": "Download for macOS",
+      "macHint": "macOS 12 or later · .dmg",
+      "recommended": "Recommended for this device",
+      "needHelp": "Need help installing?",
+      "helpLink": "Visit the Help Centre"
     }
   }
 }
