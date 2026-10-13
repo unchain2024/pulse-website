@@ -27,11 +27,6 @@ export function GOpening() {
             })}
           </p>
           <div className="g-hero-actions">
-            {t.rich("getStartedFreeSee", {
-              a: (chunks: ReactNode) => <Link className="btn btn-dark" href={`/${locale}/contact`}>{chunks}</Link>,
-              span: (chunks: ReactNode) => <span aria-hidden="true">{chunks}</span>,
-              a2: () => null,
-            })}
             {t.rich("downloadFree", {
               a: (chunks: ReactNode) => <Link className="btn btn-line g-download-btn" href={`/${locale}/download`}>{chunks}</Link>,
               span: (chunks: ReactNode) => <span aria-hidden="true">{chunks}</span>,
@@ -167,7 +162,7 @@ export function GOpening() {
               </span>
             </div>
             <div className="g-paper-content">
-              <textarea className="g-raw-notes" aria-label={t("editMeetingNotes")} spellCheck="false">
+              <textarea className="g-raw-notes" aria-label={t("editMeetingNotes")} spellCheck="false" readOnly tabIndex={-1}>
 
               </textarea>
               <div className="g-polished-notes" hidden />
@@ -186,7 +181,7 @@ export function GOpening() {
                   span2: (chunks: ReactNode) => <span>{chunks}</span>,
                 })}
               </div>
-              <button className="g-generate" type="button" hidden>
+              <button className="g-generate" type="button" tabIndex={-1} hidden>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -201,10 +196,10 @@ export function GOpening() {
                 {t("generateNotes")}
               </button>
               <div className="g-note-tabs" role="group" aria-label={t("noteView")} hidden>
-                <button data-g-note="raw" type="button" aria-pressed="false">
+                <button data-g-note="raw" type="button" tabIndex={-1} aria-pressed="false">
                   {t("myNotes")}
                 </button>
-                <button data-g-note="enhanced" type="button" aria-pressed="true">
+                <button data-g-note="enhanced" type="button" tabIndex={-1} aria-pressed="true">
                   {t("enhanced")}
                 </button>
               </div>
@@ -239,6 +234,7 @@ export function GOpening() {
               <button
                 type="button"
                 data-g-call="mic"
+                tabIndex={-1}
                 aria-label={t("toggleDemoMicrophone")}
                 aria-pressed="false"
               >
@@ -258,6 +254,7 @@ export function GOpening() {
               <button
                 type="button"
                 data-g-call="camera"
+                tabIndex={-1}
                 aria-label={t("toggleDemoCamera")}
                 aria-pressed="false"
               >
@@ -274,7 +271,7 @@ export function GOpening() {
                   <path d="m15 9 6-3v12l-6-3" />
                 </svg>
               </button>
-              <button type="button" data-g-call="close" aria-label={t("closeCallPreview")}>
+              <button type="button" data-g-call="close" tabIndex={-1} aria-label={t("closeCallPreview")}>
                 {t("text3")}
               </button>
             </div>

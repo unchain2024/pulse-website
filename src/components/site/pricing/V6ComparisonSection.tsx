@@ -25,7 +25,7 @@ export function V6ComparisonSection() {
                     {t("details")}
                   </th>
                   <th scope="col">
-                    {t("freeTrial")}
+                    {t("pro")}
                   </th>
                   <th scope="col">
                     {t("business")}
@@ -41,7 +41,7 @@ export function V6ComparisonSection() {
                     {t("price")}
                   </th>
                   <td>
-                    {t("free")}
+                    {t("proPrice")}
                   </td>
                   <td>
                     {t("text")}
@@ -55,7 +55,7 @@ export function V6ComparisonSection() {
                     {t("prepCaptureNotes")}
                   </th>
                   <td>
-                    {t("tryFeatures")}
+                    {t("includedPro")}
                   </td>
                   <td>
                     {t("included")}
@@ -69,7 +69,7 @@ export function V6ComparisonSection() {
                     {t("emailTasksCrmDrafts")}
                   </th>
                   <td>
-                    {t("exploreFeatures")}
+                    {t("notIncluded")}
                   </td>
                   <td>
                     {t("included3")}
@@ -83,7 +83,7 @@ export function V6ComparisonSection() {
                     {t("knowledgeTerminology")}
                   </th>
                   <td>
-                    {t("scopeDiscussedSetup")}
+                    {t("personalScope")}
                   </td>
                   <td>
                     {t("included5")}
@@ -97,7 +97,7 @@ export function V6ComparisonSection() {
                     {t("connectorsSetup")}
                   </th>
                   <td>
-                    {t("discussIntegrations")}
+                    {t("standardConnectors")}
                   </td>
                   <td>
                     {t("configuredWorkflow")}
