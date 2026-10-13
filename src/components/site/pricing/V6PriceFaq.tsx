@@ -23,10 +23,10 @@ export function V6PriceFaq() {
           </details>
           <details>
             <summary>
-              {t("howBusinessPriced")}
+              {t("howProBusinessPriced")}
             </summary>
             <div className="a">
-              {t("business3000Per")}
+              {t("proBusinessPricing")}
             </div>
           </details>
           <details>

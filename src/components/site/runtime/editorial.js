@@ -67,8 +67,6 @@ export function init() {
     tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.gNote===(complete?'enhanced':'raw'))));
     root.setAttribute('aria-busy',String(mode==='generating'));
    }
-   function stopAuto(){c.userControlled=true;c.timers.forEach(clearTimeout);c.timers=[]}
-   function finish(){show('enhanced');c.lastKey='manual-finished'}
    c.frame=now=>{
     if(c.userControlled)return;if(!c.born)c.born=now;const cycle=((now-c.born)%14500)/1000;
     if(cycle<3.3){const text=lines.join('\n\n'),length=Math.floor(clamp(cycle/2.9)*text.length),key=(cycle>2.9?'ready':'typing')+'-'+length;if(c.lastKey!==key){raw.value=text.slice(0,length);show(cycle>2.9?'ready':'typing');c.lastKey=key}}
@@ -77,9 +75,7 @@ export function init() {
    };
    c.reset=()=>{c.born=0;c.lastKey=''};c.static=()=>{if(!c.userControlled){raw.value=c.note;show('enhanced')}};
    raw.value=c.note;show('raw');
-   _on(raw, 'focus',()=>{stopAuto();show('raw')});_on(raw, 'input',()=>{stopAuto();c.note=raw.value;show('ready')});
-   _on(generate, 'click',()=>{stopAuto();c.note=raw.value;if(!enabled){finish();return}show('generating',0);for(let i=1;i<=3;i++)c.timers.push(_later(()=>show('generating',i),i*420));c.timers.push(_later(finish,1650))});
-   tabs.querySelectorAll('button').forEach(b=>_on(b, 'click',()=>{stopAuto();if(b.dataset.gNote==='raw'){raw.value=c.note;show('raw')}else finish()}));
+   // The notepad is a non-interactive animation: no typing, tab or generate handlers.
    return c;
   });
   const homes=Array.from(document.querySelectorAll('.editorial-home,.v6-product'));
@@ -106,7 +102,6 @@ export function init() {
    start();schedule();
   }
   document.querySelectorAll('[data-g-stage]').forEach(a=>_on(a, 'click',e=>{e.preventDefault();document.getElementById(a.getAttribute('href').slice(1))?.scrollIntoView({behavior:enabled?'smooth':'auto',block:'start'})}));
-  document.querySelectorAll('[data-g-call]').forEach(b=>_on(b, 'click',()=>{const call=b.closest('.g-mini-call'),kind=b.dataset.gCall;if(kind==='close'){call.hidden=true;return}const on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',String(on));if(kind==='camera')call.classList.toggle('camera-off',on)}));
   if(window.IntersectionObserver){const observer=_io(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -25px 0px'});homes.forEach(home=>home.querySelectorAll('.g-stage-content>h2,.g-meeting-stage>h3,.g-meeting-stage>p,.feature-story-copy>h2,.p-detail-grid>article,.p-help-teaser h2,.p-end h2').forEach(el=>{el.classList.add('g-reveal');observer.observe(el)}))}
   _on(window, 'scroll',schedule,{passive:true});_on(window, 'resize',schedule,{passive:true});_on(window, 'hashchange',()=>{schedule();start()});document.querySelectorAll('[data-lang]').forEach(b=>_on(b, 'click',()=>{controllers.forEach(c=>c.reset());schedule();start()}));
   _on(document, 'visibilitychange',()=>{if(document.hidden){if(raf)window.cancelAnimationFrame?.(raf);raf=0}else{controllers.forEach(c=>c.reset());start();schedule()}});

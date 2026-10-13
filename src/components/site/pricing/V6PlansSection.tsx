@@ -13,30 +13,30 @@ export function V6PlansSection() {
           <article className="v6-plan ">
             <div className="v6-plan-head">
               <h2>
-                {t("freeTrial")}
+                {t("pro")}
               </h2>
               <p>
-                {t("explorePulse")}
+                {t("individualsSmallTeams")}
               </p>
             </div>
             <div className="v6-plan-price">
-              {t.rich("free", {
+              {t.rich("proPrice", {
                 strong: (chunks: ReactNode) => <strong className="">{chunks}</strong>,
                 span: (chunks: ReactNode) => <span>{chunks}</span>,
               })}
             </div>
             <Link className="btn btn-line" href={`/${locale}/contact`}>
-              {t("startFreeTrial")}
+              {t("getPro")}
             </Link>
             <ul>
               <li>
-                {t("tryMeetingPrepCapture")}
+                {t("meetingBriefsTranscriptionNotesPro")}
               </li>
               <li>
-                {t("exploreNotesFollowUp")}
+                {t("notesFollowUpOwnMeetings")}
               </li>
               <li>
-                {t("discussWorkflowsIntegrations")}
+                {t("standardConnectors")}
               </li>
             </ul>
           </article>
@@ -60,7 +60,7 @@ export function V6PlansSection() {
             </Link>
             <ul>
               <li>
-                {t("meetingBriefsTranscriptionNotes")}
+                {t("everythingPro")}
               </li>
               <li>
                 {t("emailTasksCrmUpdate")}
