@@ -1798,13 +1798,21 @@
       "note": "送信後すぐにダウンロードリンクが表示されます。",
       "readyTitle": "準備ができました。Pulseをダウンロードしてください。",
       "readyBody": "お使いのプラットフォームを選んでください。セットアップは約1分で完了し、会社メールでサインインできます。",
+      "downloadStarted": "{platform}版のダウンロードが自動的に始まります。始まらない場合は、下のボタンをクリックしてください。",
+      "otherPlatform": "{current}をお使いでない場合は、{other}版はこちら",
       "windows": "Windows版をダウンロード",
       "windowsHint": "Windows 10以降 · .exe",
       "mac": "macOS版をダウンロード",
       "macHint": "macOS 12以降 · .dmg",
       "recommended": "この端末におすすめ",
       "needHelp": "インストールでお困りですか？",
-      "helpLink": "ヘルプセンターを見る"
+      "helpLink": "ヘルプセンターを見る",
+      "directIntro": "macOS・Windows向けのPulseデスクトップアプリを入手できます。無料で開始、クレジットカードは不要です。"
+    },
+    "downloadButton": {
+      "generic": "無料でダウンロード",
+      "for": "{platform}版をダウンロード",
+      "comingSoon": "モバイル版は近日公開予定です。MacまたはWindows PCでこのページを開いてください。"
     }
   }
 }

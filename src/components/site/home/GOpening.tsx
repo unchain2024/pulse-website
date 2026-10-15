@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
+import { DownloadButton } from "../DownloadButton";
 
 export function GOpening() {
   const t = useTranslations("site.home.gOpening");
@@ -27,10 +28,7 @@ export function GOpening() {
             })}
           </p>
           <div className="g-hero-actions">
-            {t.rich("downloadFree", {
-              a: (chunks: ReactNode) => <Link className="btn btn-line g-download-btn" href={`/${locale}/download`}>{chunks}</Link>,
-              span: (chunks: ReactNode) => <span aria-hidden="true">{chunks}</span>,
-            })}
+            <DownloadButton className="btn btn-line g-download-btn" arrow={<span aria-hidden="true">↓</span>} />
           </div>
           <p className="g-availability">
             {t("availableMacosWindows")}

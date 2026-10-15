@@ -3,28 +3,18 @@ import {useLocale,useTranslations} from 'next-intl';
 import Link from 'next/link';
 import {useEffect,useState,type FormEvent} from 'react';
 import s from './ContactForm.module.css';
+import {utmFields,withUtm} from '@/lib/utm';
+import {DOWNLOADS,PLATFORM_NAME,detectPlatform,startDownload,type DesktopPlatform} from '@/lib/download';
 
 /** Web3Forms access key for the download form (separate from the contact form's key). */
 const WEB3FORMS_ACCESS_KEY=process.env.NEXT_PUBLIC_WEB3FORMS_DOWNLOAD_ACCESS_KEY??'08dca2aa-c14c-429b-8007-564bc5dfbae3';
 
-/** Installer files live in /public/downloads. Replace the files there (or the paths here) when a new build ships. */
-export const DOWNLOADS={
-  windows:{href:'/downloads/Pulse-Setup.exe',file:'Pulse-Setup.exe'},
-  mac:{href:'/downloads/Pulse.dmg',file:'Pulse.dmg'},
-} as const;
+export {DOWNLOADS};
 
 /** Same fields as the contact form; field labels are reused from the site.contact namespace. */
 const fields=['name','company','email','personal','role','topic','teamSize','meetings','message'];
 type Status='idle'|'sending'|'sent'|'error';
-type Platform='windows'|'mac'|null;
-
-function detectPlatform():Platform{
-  if(typeof navigator==='undefined')return null;
-  const ua=navigator.userAgent;
-  if(/Windows/i.test(ua))return 'windows';
-  if(/Macintosh|Mac OS X/i.test(ua))return 'mac';
-  return null;
-}
+type Platform=DesktopPlatform|null;
 
 export function DownloadForm(){
   const t=useTranslations('site.download');
@@ -32,7 +22,7 @@ export function DownloadForm(){
   const locale=useLocale();
   const [status,setStatus]=useState<Status>('idle');
   const [platform,setPlatform]=useState<Platform>(null);
-  useEffect(()=>{setPlatform(detectPlatform())},[]);
+  useEffect(()=>{const p=detectPlatform();setPlatform(p==='windows'||p==='mac'?p:null)},[]);
 
   async function submit(e:FormEvent<HTMLFormElement>){
     e.preventDefault();
@@ -42,7 +32,8 @@ export function DownloadForm(){
     const payload:Record<string,string>={access_key:WEB3FORMS_ACCESS_KEY,subject:'Pulse — '+t('title'),from_name:'Pulse Website',botcheck:String(data.get('botcheck')??'')};
     for(const k of fields){const v=data.get(k);if(v)payload[tc(k)]=String(v);}
     const email=data.get('email');if(email)payload.replyto=String(email);
-    if(platform)payload.Platform=platform==='mac'?'macOS':'Windows';
+    if(platform)payload.Platform=PLATFORM_NAME[platform];
+    Object.assign(payload,utmFields());
     setStatus('sending');
     try{
       const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)});
@@ -50,14 +41,17 @@ export function DownloadForm(){
       if(!res.ok||!json.success)throw new Error(json.message||'Submit failed');
       form.reset();
       setStatus('sent');
+      if(platform){const d=DOWNLOADS[platform];startDownload(withUtm(d.href),d.file);}
     }catch{setStatus('error');}
   }
 
-  const options:Array<{key:'windows'|'mac';label:string;hint:string}>=[
+  const options:Array<{key:DesktopPlatform;label:string;hint:string}>=[
     {key:'windows',label:t('windows'),hint:t('windowsHint')},
     {key:'mac',label:t('mac'),hint:t('macHint')},
   ];
-  if(platform==='mac')options.reverse();
+  /** Detected desktop OS → only that installer (auto-started), with the other one offered as a text link. Unknown → both buttons. */
+  const shown=platform?options.filter(o=>o.key===platform):options;
+  const other:DesktopPlatform|null=platform==='windows'?'mac':platform==='mac'?'windows':null;
 
   return <section className={`${s.page} wrap`}>
     <div className={s.copy}>
@@ -76,12 +70,12 @@ export function DownloadForm(){
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
           </span>
           <h2>{t('readyTitle')}</h2>
-          <p>{t('readyBody')}</p>
+          <p>{platform?t('downloadStarted',{platform:PLATFORM_NAME[platform]}):t('readyBody')}</p>
           <div className={s.downloads}>
-            {options.map(o=>{
+            {shown.map(o=>{
               const d=DOWNLOADS[o.key];
               const rec=platform===o.key;
-              return <a key={o.key} href={d.href} download={d.file} className={`${s.dl} ${rec?s.dlPrimary:''}`}>
+              return <a key={o.key} href={withUtm(d.href)} download={d.file} className={`${s.dl} ${rec?s.dlPrimary:''}`}>
                 <span className={s.dlIcon} aria-hidden="true">
                   {o.key==='windows'
                     ? <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 11 4.4v7.1H3V5.5Zm0 13L11 19.6v-7.1H3v6Zm9 1.3L21 21v-8.5h-9v7.3Zm0-15.6v7.3h9V3L12 4.2Z"/></svg>
@@ -95,6 +89,7 @@ export function DownloadForm(){
               </a>;
             })}
           </div>
+          {platform&&other&&<p><a href={withUtm(DOWNLOADS[other].href)} download={DOWNLOADS[other].file}>{t('otherPlatform',{current:PLATFORM_NAME[platform],other:PLATFORM_NAME[other]})} →</a></p>}
           <p>{t('needHelp')} <Link href={`/${locale}/help`}>{t('helpLink')} →</Link></p>
         </div>
       : <form className={s.form} onSubmit={submit}>

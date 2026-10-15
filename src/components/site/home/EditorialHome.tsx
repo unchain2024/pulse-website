@@ -4,6 +4,7 @@ import {useTranslations,useLocale} from 'next-intl';
 import Link from 'next/link';
 import {PulseMark} from '../PulseMark';
 import {GOpening} from './GOpening';
+import {DownloadButton} from '../DownloadButton';
 import {WorkflowPreview} from './WorkflowPreview';
 import {PulseVocabulary} from './PulseVocabulary';
 import {PulseAiHandoff} from './PulseAiHandoff';
@@ -31,10 +32,10 @@ export function EditorialHome(){
  <GOpening/>
  <section className={`${s.container} ${s.workflow}`}><h2>{m.rich('beforeDuringAfterEvery',{br:()=> <br/>})}</h2><div className={`${s.workflowGrid} pulse-stage-scope`}><nav aria-label={m('beforeDuringAfter')}>{['beforeMeeting','meeting','afterMeeting'].map((key,i)=><a key={key} href={`#pulse-stage-${i}`} aria-current={stage===i?'step':undefined}>{m(key)}<span aria-hidden="true" className="pulse-stage-track"><span className={`pulse-stage-fill pulse-stage-fill-${i}${stage>i?' is-passed':''}`}/></span></a>)}</nav><div>{[['briefReadyMeeting','useCalendarEventsCustomer'],['conversationNotesTogether','transcribeAudioDeviceKeep'],['notesNextStepsReady','organizeAgreementsOpenQuestions']].map(([title,body],i)=><article id={`pulse-stage-${i}`} key={i} className={`pulse-stage-source-${i}`}><h3>{m(title)}</h3><p>{m(body)}</p><div className={s.workflowImage}><WorkflowPreview stage={i}/></div></article>)}</div></div></section>
  <section className={s.memory}><div className={s.container}><div><span>Pulse Chat</span><h2>{memory.rich('askAcrossMeetingHistory',{br:()=> <br/>})}</h2><p>{memory('whatDidCommitWeek')}</p></div><div className={s.prompt}><p>{e('question')}</p>{answer?<div aria-live="polite"><p>{e('answer')}</p><small>{e('source')}</small></div>:<button onClick={()=>setAnswer(true)}>{e('ask')} ↗</button>}<div className={s.promptBottom}><span>▤ {e('source')}</span><b>↑</b></div></div></div></section>
- <section className={`${s.container} ${s.features}`}><header><span>{e('featureLabel')}</span><h2>{v.rich('whereverMeetHoweverWork',{br:()=> <br/>})}</h2><Link className={s.cta} href={`/${locale}/download`}>{e('trial')} ↗</Link></header>{features.map(([key,kind])=><article key={key}><div className={s.featureHead}>{v.rich(key,{strong:chunks=><h3>{chunks}</h3>,span:chunks=><p>{chunks}</p>})}</div><Scene kind={kind}/></article>)}</section>
+ <section className={`${s.container} ${s.features}`}><header><span>{e('featureLabel')}</span><h2>{v.rich('whereverMeetHoweverWork',{br:()=> <br/>})}</h2><DownloadButton className={s.cta} arrow="↗"/></header>{features.map(([key,kind])=><article key={key}><div className={s.featureHead}>{v.rich(key,{strong:chunks=><h3>{chunks}</h3>,span:chunks=><p>{chunks}</p>})}</div><Scene kind={kind}/></article>)}</section>
  <div className={s.dictionary}><PulseVocabulary/></div>
  <div className={s.mcp}><PulseAiHandoff/></div>
  <div className={s.help}><PHelpTeaser/></div>
- <section className={s.end}><div><small>PULSE BY UNCHAIN</small><h2>{end('endTitle')}</h2><p>{end('endBody')}</p><Link className={s.cta} href={`/${locale}/download`}>{e('download')} ↓</Link></div></section>
+ <section className={s.end}><div><small>PULSE BY UNCHAIN</small><h2>{end('endTitle')}</h2><p>{end('endBody')}</p><DownloadButton className={s.cta} arrow="↓"/></div></section>
  </div>
 }
