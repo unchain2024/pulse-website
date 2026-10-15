@@ -1798,6 +1798,8 @@
       "note": "送信後すぐにダウンロードリンクが表示されます。",
       "readyTitle": "準備ができました。Pulseをダウンロードしてください。",
       "readyBody": "お使いのプラットフォームを選んでください。セットアップは約1分で完了し、会社メールでサインインできます。",
+      "downloadStarted": "{platform}版のダウンロードが自動的に始まります。始まらない場合は、下のボタンをクリックしてください。",
+      "otherPlatform": "{current}をお使いでない場合は、{other}版はこちら",
       "windows": "Windows版をダウンロード",
       "windowsHint": "Windows 10以降 · .exe",
       "mac": "macOS版をダウンロード",

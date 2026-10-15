@@ -8,6 +8,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { ImageDialog } from "@/components/site/ImageDialog";
 import { SiteRuntime } from "@/components/site/SiteRuntime";
+import { UtmCapture } from "@/components/site/UtmCapture";
 import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
@@ -59,6 +60,7 @@ export default async function LocaleLayout({
             <Footer />
           </div>
           <ImageDialog />
+          <UtmCapture />
           <SiteRuntime />
         </NextIntlClientProvider>
       </body>

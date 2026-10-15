@@ -2,6 +2,7 @@
 import {useTranslations} from 'next-intl';
 import {useState,type FormEvent} from 'react';
 import s from './ContactForm.module.css';
+import {utmFields} from '@/lib/utm';
 const WEB3FORMS_ACCESS_KEY=process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY??'5b436ee0-6aed-44f7-8347-6180b1aac674';
 const fields=['name','company','email','personal','role','topic','teamSize','meetings','message'];
 type Status='idle'|'sending'|'sent'|'error';
@@ -10,6 +11,7 @@ async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();if(status
 const payload:Record<string,string>={access_key:WEB3FORMS_ACCESS_KEY,subject:'Pulse — '+t('title'),from_name:'Pulse Website',botcheck:String(data.get('botcheck')??'')};
 for(const k of fields){const v=data.get(k);if(v)payload[t(k)]=String(v);}
 const email=data.get('email');if(email)payload.replyto=String(email);
+Object.assign(payload,utmFields());
 setStatus('sending');
 try{const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)});const json=await res.json();if(!res.ok||!json.success)throw new Error(json.message||'Submit failed');form.reset();setStatus('sent');}
 catch{setStatus('error');}}

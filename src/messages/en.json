@@ -1798,6 +1798,8 @@
       "note": "The download links appear right after you submit.",
       "readyTitle": "You’re all set. Download Pulse.",
       "readyBody": "Pick your platform below. Setup takes about a minute, and you can sign in with your work email.",
+      "downloadStarted": "Your {platform} download should start automatically. If it doesn’t, click the button below.",
+      "otherPlatform": "Not on {current}? Get the {other} version instead",
       "windows": "Download for Windows",
       "windowsHint": "Windows 10 or later · .exe",
       "mac": "Download for macOS",
