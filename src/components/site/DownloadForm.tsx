@@ -4,39 +4,17 @@ import Link from 'next/link';
 import {useEffect,useState,type FormEvent} from 'react';
 import s from './ContactForm.module.css';
 import {utmFields,withUtm} from '@/lib/utm';
+import {DOWNLOADS,PLATFORM_NAME,detectPlatform,startDownload,type DesktopPlatform} from '@/lib/download';
 
 /** Web3Forms access key for the download form (separate from the contact form's key). */
 const WEB3FORMS_ACCESS_KEY=process.env.NEXT_PUBLIC_WEB3FORMS_DOWNLOAD_ACCESS_KEY??'08dca2aa-c14c-429b-8007-564bc5dfbae3';
 
-/** Installer files live in /public/downloads. Replace the files there (or the paths here) when a new build ships. */
-export const DOWNLOADS={
-  windows:{href:'/downloads/Pulse-Setup.exe',file:'Pulse-Setup.exe'},
-  mac:{href:'/downloads/Pulse.dmg',file:'Pulse.dmg'},
-} as const;
+export {DOWNLOADS};
 
 /** Same fields as the contact form; field labels are reused from the site.contact namespace. */
 const fields=['name','company','email','personal','role','topic','teamSize','meetings','message'];
 type Status='idle'|'sending'|'sent'|'error';
-type Platform='windows'|'mac'|null;
-const PLATFORM_NAME={windows:'Windows',mac:'macOS'} as const;
-
-/** Desktop OS only. Phones/tablets (incl. iPadOS in desktop mode, which reports "Macintosh") return null so nothing auto-downloads there. */
-function detectPlatform():Platform{
-  if(typeof navigator==='undefined')return null;
-  const p=(navigator as Navigator&{userAgentData?:{platform?:string}}).userAgentData?.platform?.toLowerCase();
-  if(p)return p.includes('windows')?'windows':p==='macos'?'mac':null;
-  const ua=navigator.userAgent;
-  if(/iPhone|iPad|iPod|Android|CrOS|Windows Phone/i.test(ua))return null;
-  if(/Windows/i.test(ua))return 'windows';
-  if(/Macintosh|Mac OS X/i.test(ua)&&navigator.maxTouchPoints<2)return 'mac';
-  return null;
-}
-
-/** Kick off a download without leaving the page. If the browser blocks it, the visible button is the fallback. */
-function startDownload(href:string,file:string){
-  const a=document.createElement('a');a.href=href;a.download=file;a.style.display='none';
-  document.body.appendChild(a);a.click();a.remove();
-}
+type Platform=DesktopPlatform|null;
 
 export function DownloadForm(){
   const t=useTranslations('site.download');
@@ -44,7 +22,7 @@ export function DownloadForm(){
   const locale=useLocale();
   const [status,setStatus]=useState<Status>('idle');
   const [platform,setPlatform]=useState<Platform>(null);
-  useEffect(()=>{setPlatform(detectPlatform())},[]);
+  useEffect(()=>{const p=detectPlatform();setPlatform(p==='windows'||p==='mac'?p:null)},[]);
 
   async function submit(e:FormEvent<HTMLFormElement>){
     e.preventDefault();
@@ -67,13 +45,13 @@ export function DownloadForm(){
     }catch{setStatus('error');}
   }
 
-  const options:Array<{key:'windows'|'mac';label:string;hint:string}>=[
+  const options:Array<{key:DesktopPlatform;label:string;hint:string}>=[
     {key:'windows',label:t('windows'),hint:t('windowsHint')},
     {key:'mac',label:t('mac'),hint:t('macHint')},
   ];
   /** Detected desktop OS → only that installer (auto-started), with the other one offered as a text link. Unknown → both buttons. */
   const shown=platform?options.filter(o=>o.key===platform):options;
-  const other:Exclude<Platform,null>|null=platform==='windows'?'mac':platform==='mac'?'windows':null;
+  const other:DesktopPlatform|null=platform==='windows'?'mac':platform==='mac'?'windows':null;
 
   return <section className={`${s.page} wrap`}>
     <div className={s.copy}>

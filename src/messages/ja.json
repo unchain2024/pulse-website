@@ -1806,7 +1806,13 @@
       "macHint": "macOS 12以降 · .dmg",
       "recommended": "この端末におすすめ",
       "needHelp": "インストールでお困りですか？",
-      "helpLink": "ヘルプセンターを見る"
+      "helpLink": "ヘルプセンターを見る",
+      "directIntro": "macOS・Windows向けのPulseデスクトップアプリを入手できます。無料で開始、クレジットカードは不要です。"
+    },
+    "downloadButton": {
+      "generic": "無料でダウンロード",
+      "for": "{platform}版をダウンロード",
+      "comingSoon": "モバイル版は近日公開予定です。MacまたはWindows PCでこのページを開いてください。"
     }
   }
 }

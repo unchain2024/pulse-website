@@ -1806,7 +1806,13 @@
       "macHint": "macOS 12 or later · .dmg",
       "recommended": "Recommended for this device",
       "needHelp": "Need help installing?",
-      "helpLink": "Visit the Help Centre"
+      "helpLink": "Visit the Help Centre",
+      "directIntro": "Get the Pulse desktop app for macOS and Windows. Free to start, no credit card needed."
+    },
+    "downloadButton": {
+      "generic": "Download free",
+      "for": "Download for {platform}",
+      "comingSoon": "Coming soon to mobile. Open this page on your Mac or Windows PC."
     }
   }
 }
