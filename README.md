@@ -24,12 +24,13 @@ src/app/layout.tsx              imports globals.css, returns children
 src/app/[locale]/layout.tsx     <html>/<body>, the .lang wrapper, nav, footer, runtime
 src/app/[locale]/page.tsx       home
 src/app/[locale]/<page>/        one route per page (20 of them)
-src/app/[locale]/help/          help centre: home, categories, 88 articles
+src/app/[locale]/help/          help centre: home, categories, 82 articles
 src/app/api/help/search/        full-text article search
 src/middleware.ts               next-intl locale routing
 
 src/components/site/            one folder per page, one file per section
 src/components/site/runtime/    the prototype's behaviour, as startable modules
+src/components/site/legal/      one renderer for the legal pages (privacy, terms, subprocessors, external-transmission)
 src/messages/{ja,en}.json       every user-visible string, key-for-key identical
 src/styles/01-…09-*.css         the prototype's style layers, in cascade order
 src/data/help.json              help article corpus (server only)
@@ -78,10 +79,14 @@ are not type-checked.
 
 **Text.** No hardcoded strings in components. Everything lives in both
 `src/messages/ja.json` and `src/messages/en.json` under `site.<page>.<section>`,
-read with `useTranslations`. The two files stay key-for-key identical (955 keys
-each). Headings that break differently per language use next-intl rich text —
-note that its parser has no self-closing tag form, so a line break is written
-`<br></br>` in the message.
+read with `useTranslations`. The two files stay key-for-key identical. Headings
+that break differently per language use next-intl rich text — note that its
+parser has no self-closing tag form, so a line break is written
+`<br></br>` in the message. The legal pages (privacy, terms, subprocessors,
+external-transmission) keep each document as data under `site.<page>.block1`
+(`title`, `updated`, `intro`, and `sections` made of `p` / `h3` / `ul` / `table`
+blocks) and render it with `LegalDocument`, whose rich-text tags supply the links.
+Arrays must have the same length in both locales.
 
 ## Known gaps, carried over from the prototype
 

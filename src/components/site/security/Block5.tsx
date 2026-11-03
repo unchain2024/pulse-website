@@ -58,7 +58,53 @@ export function Block5() {
               {t("howHandlePersonalData")}
             </p>
           </Link>
-          <Link className="card link" href={`/${locale}/help`}>
+          <Link className="card link" href={`/${locale}/subprocessors`}>
+            <div className="ic">
+              <svg
+                className=""
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="4" width="18" height="6" rx="1.5" />
+                <rect x="3" y="14" width="18" height="6" rx="1.5" />
+                <path d="M7 7h.01M7 17h.01" />
+              </svg>
+            </div>
+            <h4>
+              {t("subprocessors")}
+            </h4>
+            <p>
+              {t("subprocessorsDesc")}
+            </p>
+          </Link>
+          <Link className="card link" href={`/${locale}/external-transmission`}>
+            <div className="ic">
+              <svg
+                className=""
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h12M13 6l6 6-6 6" />
+              </svg>
+            </div>
+            <h4>
+              {t("externalTransmission")}
+            </h4>
+            <p>
+              {t("externalTransmissionDesc")}
+            </p>
+          </Link>
+          <Link className="card link" href={`/${locale}/contact`}>
             <div className="ic">
               <svg
                 className=""
@@ -78,7 +124,7 @@ export function Block5() {
               {t("reports")}
             </h4>
             <p>
-              {t("auditReportsQuestionnairesUnder")}
+              {t("questionnairesOnRequest")}
             </p>
           </Link>
         </div>

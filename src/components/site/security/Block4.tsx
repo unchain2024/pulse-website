@@ -1,7 +1,13 @@
-import { useTranslations } from "next-intl";
+import type { ReactNode } from "react";
+import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 
 export function Block4() {
   const t = useTranslations("site.security.block4");
+  const locale = useLocale();
+  const subprocessors = {
+    a: (chunks: ReactNode) => <Link className="link" href={`/${locale}/subprocessors`}>{chunks}</Link>,
+  };
 
   return (
     <section className="tight">
@@ -15,7 +21,7 @@ export function Block4() {
               {t("whereMyDataStored")}
             </summary>
             <div className="a">
-              {t("regionCloudInfrastructure")}
+              {t.rich("regionCloudInfrastructure", subprocessors)}
             </div>
           </details>
           <details>
@@ -23,7 +29,7 @@ export function Block4() {
               {t("whichSubprocessorsDoUse")}
             </summary>
             <div className="a">
-              {t("publishListTranscriptionAi")}
+              {t.rich("publishListTranscriptionAi", subprocessors)}
             </div>
           </details>
           <details>
@@ -31,7 +37,7 @@ export function Block4() {
               {t("howLongDataRetained")}
             </summary>
             <div className="a">
-              {t("untilDeleteEnterpriseCan")}
+              {t("orgRetentionPeriod")}
             </div>
           </details>
           <details>
@@ -39,7 +45,7 @@ export function Block4() {
               {t("canIExportMy")}
             </summary>
             <div className="a">
-              {t("exportNotesTranscriptsMarkdown")}
+              {t("exportOwnAndOrgData")}
             </div>
           </details>
         </div>
