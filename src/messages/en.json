@@ -166,6 +166,8 @@
       "contactUs": "<a>Contact us</a>",
       "terms": "<a>Terms</a>",
       "privacy": "<a>Privacy</a>",
+      "subprocessors": "<a>Subprocessors</a>",
+      "externalTransmission": "<a>External transmission</a>",
       "unchain2": "UNCHAIN株式会社",
       "unchain3": "UNCHAIN",
       "unchainInc2026": "© UNCHAIN, Inc. 2026",
@@ -1098,26 +1100,396 @@
     },
     "privacy": {
       "block1": {
-        "privacyPolicy": "Privacy policy",
-        "lastUpdatedSeptember1": "Last Updated: September 1, 2026",
-        "text": "1. Information we collect",
-        "accountDetailsNameEmail": "Account details (name, email, company), the notes and transcripts you create, app usage, and calendar events from connected calendars. Meeting audio is discarded after transcription and never stored.",
-        "text2": "2. How we use it",
-        "provideImproveServiceSupport": "To provide and improve the Service, support you, keep it secure and comply with law. We do not train AI models on your data.",
-        "text3": "3. Subprocessors",
-        "useTranscriptionAiCloud": "We use transcription, AI and cloud infrastructure providers to deliver the Service. The list is published on our subprocessor page.",
-        "text4": "4. Storage and retention",
-        "dataStoredEncryptedRegion": "Data is stored encrypted in-region and retained until you delete it. Enterprise plans can set auto-deletion periods.",
-        "text5": "5. Security",
-        "encryptionRestTransitAccess": "Encryption at rest and in transit, access controls, audit logs and staff training.",
-        "text6": "6. Your rights",
-        "mayRequestAccessCorrection": "You may request access, correction, deletion or suspension of your personal data from within the app or by contacting us.",
-        "text7": "7. Cookies",
-        "websiteUsesCookiesConvenience": "Our website uses cookies for convenience and analytics; disable them in your browser.",
-        "text8": "8. Changes",
-        "changesPolicyWillPosted": "Changes to this policy will be posted on our website.",
-        "text9": "9. Contact",
-        "unchainIncPrivacyPrivacy": "UNCHAIN, Inc. Privacy (privacy@the-unchain.com)"
+        "title": "Privacy policy",
+        "updated": "Last Updated: November 3, 2026",
+        "intro": [
+          "UNCHAIN, Inc. (“we”) handles personal information in the meeting-notes service “Pulse” (the web app, the desktop apps, our sign-in service “Pulse ID” and this website; together, the “Service”) in accordance with Japan's Act on the Protection of Personal Information (the “APPI”) and other applicable laws, as set out in this policy."
+        ],
+        "sections": [
+          {
+            "heading": "1. Our two roles",
+            "blocks": [
+              {
+                "p": "Some personal information in the Service we handle for our own business, and some we process on behalf of customer organisations. Our responsibilities differ for each."
+              },
+              {
+                "h3": "(1) Information we handle for our own business"
+              },
+              {
+                "p": "Users' account details, sign-in records, billing information, usage analytics and enquiries are handled by us as the business responsible for them (the controller). This policy mainly governs this information."
+              },
+              {
+                "h3": "(2) Information we process on behalf of customer organisations"
+              },
+              {
+                "p": "Meeting audio, transcripts and notes, imported calendar events, email and chat, library files, the facts extracted from them, and information about people outside the organisation such as the other side of a meeting (“external people”) — together, “Customer Data” — are processed by us on behalf of the organisation that subscribes to the Service (the “Customer”), which entrusts us with it. For Customer Data, the Customer is the business responsible under the APPI (the controller): it specifies and communicates the purposes of use, obtains consent where the law requires it, and answers requests from the people concerned."
+              },
+              {
+                "p": "We process Customer Data only to provide the Service and never use it to train AI models. As set out in our Terms, we may also use it to evaluate and improve the Service, and the Customer's admins can turn this off in Settings (see “3. Purposes of use”). We do not provide Customer Data to third parties for our own purposes."
+              }
+            ]
+          },
+          {
+            "heading": "2. Information we collect",
+            "blocks": [
+              {
+                "ul": [
+                  "<b>Account details</b>: name, email address, the name of your organisation and your role in it, your password (stored in a form that cannot be reversed), your Google account identifier if you sign in with Google, settings such as language and time zone, your two-step verification settings, and the versions of the terms and policies you accepted at registration",
+                  "<b>Sign-in and security records</b>: the time and result of each sign-in attempt, IP address, browser and operating system, and audit logs of administrative actions",
+                  "<b>Billing information</b>: the payer's email address, plan, number of seats, and invoice and payment records. Card details are entered on the screen of our payment processor (Stripe); we never receive them",
+                  "<b>Usage information</b>: actions in the web app and the desktop apps' window (pages viewed, clicks and use of input fields, with all on-screen and typed text masked), session recordings with all text masked, error details, browser, operating system and screen size, and an identifier stored in a cookie or local storage. After you sign in, this is linked to your user ID, name, email address, and your organisation's ID and name",
+                  "<b>Desktop app logs</b>: records of how the app runs (counts, reasons, error codes, the connection type of audio devices). They never contain names, meeting titles, note text or the names of audio devices",
+                  "<b>Customer Data</b>: meeting audio (deleted after transcription), transcripts, live captions, notes, memos, meeting events and their participants, events, email and messages imported from services a user connects (such as Google Calendar, Gmail, Microsoft 365 and Slack), files uploaded to the library, the people, companies and facts extracted from these, and information about external people and companies gathered from public web pages before a meeting (an organisation can turn this off)",
+                  "<b>Enquiries</b>: the name, company, email address, role and message you send through this website's form or by email, and the parameters showing how you reached this website (such as utm_source)"
+                ]
+              }
+            ]
+          },
+          {
+            "heading": "3. Purposes of use",
+            "blocks": [
+              {
+                "p": "We use the information above only for the following purposes."
+              },
+              {
+                "table": {
+                  "head": [
+                    "Information",
+                    "Purposes"
+                  ],
+                  "rows": [
+                    [
+                      "Account details",
+                      "Identifying and authenticating you; providing the Service; inviting and managing members of an organisation; managing plans; sending important notices (changes to the terms or this policy, incidents, confirmation of account deletion); answering your questions"
+                    ],
+                    [
+                      "Sign-in and security records",
+                      "Preventing and detecting unauthorised access; investigating security incidents; operating the Service securely"
+                    ],
+                    [
+                      "Billing information",
+                      "Charging and collecting fees; accounting; keeping the records the law requires"
+                    ],
+                    [
+                      "Usage information (PostHog)",
+                      "Understanding how the Service is used; finding and investigating bugs; improving features and usability; detecting outages and misuse"
+                    ],
+                    [
+                      "Desktop app logs",
+                      "Investigating problems; making recording more reliable"
+                    ],
+                    [
+                      "Customer Data",
+                      "Providing the Service (transcription; writing notes, summaries and briefs; answering questions; drafting follow-up emails and CRM updates; sending to the integrations the Customer directs); support at the Customer's request; keeping the Service secure; evaluating and improving the Service (below)"
+                    ],
+                    [
+                      "Enquiries",
+                      "Answering you; guiding you through downloads and adoption; understanding how people find us"
+                    ]
+                  ]
+                }
+              },
+              {
+                "p": "<b>Improving the Service</b>: as set out in our Terms, we may use Customer Data to evaluate and improve the quality of the Service (for example, checking the accuracy of transcription and extraction, or investigating bugs). We never use Customer Data to train AI models. When our staff access Customer Data, the access is recorded in the Customer's audit log. The Customer's admins can turn this use off in Settings; the change takes effect within 30 days."
+              },
+              {
+                "p": "We do not use personal information for advertising and we do not sell it."
+              }
+            ]
+          },
+          {
+            "heading": "4. Sensitive personal information",
+            "blocks": [
+              {
+                "p": "We do not ask for special care-required (sensitive) personal information as defined in Article 2(3) of the APPI, such as race, creed, medical history or criminal record. Depending on what is said in a meeting, however, transcripts and notes may contain it."
+              },
+              {
+                "p": "The user who records a meeting, and their organisation, are responsible for telling participants that the meeting is recorded and transcribed and for obtaining their consent where the law requires it. Obtaining sensitive personal information generally requires the person's own consent (APPI Article 20(2)). Also follow any industry rules (for example in healthcare or finance) and agreements with the other side."
+              },
+              {
+                "p": "At registration we record that the user has understood and accepted this responsibility, together with the versions of the terms and policies they accepted."
+              }
+            ]
+          },
+          {
+            "heading": "5. Provision to third parties",
+            "blocks": [
+              {
+                "p": "We do not provide personal data to a third party without the person's prior consent, except:"
+              },
+              {
+                "ul": [
+                  "where required by law, or in the other cases listed in Article 27(1) of the APPI (for example, to protect a person's life, body or property when consent is difficult to obtain, or to cooperate with a public authority performing duties prescribed by law)",
+                  "when we entrust its handling to a service provider as described in “6. Service providers and third parties in foreign countries”",
+                  "when the business is succeeded through a merger or otherwise"
+                ]
+              },
+              {
+                "p": "When a Customer turns on an integration (such as HubSpot, Salesforce, Slack, Notion or Google Docs) and exports a note or applies a CRM update, the data is sent on the Customer's instruction. How the recipient handles it is governed by the Customer's agreement with that provider."
+              },
+              {
+                "p": "When we provide personal data to a third party, we keep a record as the law requires."
+              }
+            ]
+          },
+          {
+            "heading": "6. Service providers and third parties in foreign countries",
+            "blocks": [
+              {
+                "p": "We entrust the handling of personal data to cloud and other service providers to the extent needed to provide the Service. They are listed on our <subprocessors>subprocessor list</subprocessors>. We choose them after checking how they protect personal information, require appropriate handling through contracts or terms of service, and supervise them as necessary."
+              },
+              {
+                "h3": "Where data is stored"
+              },
+              {
+                "p": "The Service's database (including Pulse ID), the application runtime, the storage for meeting audio and library files, and the database backups are all in Japan (Tokyo). These providers (Supabase, Vercel and Wasabi) are US companies."
+              },
+              {
+                "h3": "Information handled in the United States"
+              },
+              {
+                "p": "AI processing (transcription, live captions, notes and summaries), usage analytics, payments and email delivery are carried out by US providers in the United States. The purpose and the information for each are on the <subprocessors>subprocessor list</subprocessors>."
+              },
+              {
+                "ul": [
+                  "<b>Country</b>: the United States of America (Anthropic, OpenAI, Google, ElevenLabs, AssemblyAI, PostHog, Stripe and Resend, including Vercel's AI Gateway, which routes calls to the AI providers)",
+                  "<b>Its personal information protection system</b>: the United States has no comprehensive federal law equivalent to the APPI; personal information is protected by Section 5 of the Federal Trade Commission Act, sector-specific federal laws, and state laws such as the California Consumer Privacy Act. For details, see the Personal Information Protection Commission's <ppc>survey of foreign personal information protection systems</ppc> (<ppcus>United States, federal</ppcus>; in Japanese).",
+                  "<b>Measures the providers take</b>: our contract or terms with each provider (including their data processing terms) require them to handle the data only for the purposes we entrust, to keep it secure and to manage their own subcontractors. We use Anthropic, OpenAI and Google under terms under which data sent through their APIs is not used to train their models. Data is sent over encrypted connections (TLS), and we send only what each task needs."
+                ]
+              },
+              {
+                "p": "On request, we will provide the information set out in Article 28(3) of the APPI, including details of these measures."
+              },
+              {
+                "h3": "This website's contact form"
+              },
+              {
+                "p": "Enquiries sent through this website's form reach us through Web3Forms, a form delivery service operated by Web3Creative (India), whose servers are in the United States; its terms and privacy policy govern how it handles them. For India's personal information protection system, see the Commission's <ppcin>report on India</ppcin> (in Japanese). You can also email contact@the-unchain.com directly instead of using the form."
+              }
+            ]
+          },
+          {
+            "heading": "7. How long we keep information",
+            "blocks": [
+              {
+                "p": "We keep personal information for as long as its purposes require and then delete it. The main periods are:"
+              },
+              {
+                "table": {
+                  "head": [
+                    "Information",
+                    "Retention"
+                  ],
+                  "rows": [
+                    [
+                      "Notes, transcripts, imported email and chat records",
+                      "The organisation's retention period (12 months by default; an admin can choose 6, 12, 24 or 36 months, or keep forever). Notes past the period move to the trash and are permanently deleted 30 days later; email and chat records past the period are deleted"
+                    ],
+                    [
+                      "Extracted people, companies and facts",
+                      "Until every note, email and chat record they came from is deleted, or earlier when an admin deletes the person or the organisation is deleted"
+                    ],
+                    [
+                      "Notes in the trash",
+                      "Permanently deleted after 30 days (the owner or an admin can delete them sooner)"
+                    ],
+                    [
+                      "Meeting audio",
+                      "Deleted right after transcription. Pieces of a failed upload are deleted within 24 hours (the desktop app keeps the original file of a recording it could not send on your computer)"
+                    ],
+                    [
+                      "Sign-in records (Pulse ID)",
+                      "90 days"
+                    ],
+                    [
+                      "Audit logs",
+                      "2 years"
+                    ],
+                    [
+                      "AI usage records (time, feature, cost and similar metadata; never the content)",
+                      "13 months"
+                    ],
+                    [
+                      "Notifications",
+                      "90 days"
+                    ],
+                    [
+                      "Desktop app logs (PostHog)",
+                      "14 days"
+                    ],
+                    [
+                      "Usage analytics (PostHog)",
+                      "PostHog's retention period. When you delete your account, we also delete your data in PostHog"
+                    ],
+                    [
+                      "Billing records",
+                      "As long as the law requires"
+                    ],
+                    [
+                      "Accounts",
+                      "Deleted after a 30-day grace period from the deletion request (you can cancel during it). Notes shared in the organisation's spaces and other business records stay with the organisation, attributed to a former member"
+                    ],
+                    [
+                      "Backups",
+                      "Encrypted and kept for 30 days. Deleted data disappears from the backups within 30 days"
+                    ],
+                    [
+                      "Enquiries",
+                      "As long as needed to deal with them"
+                    ]
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "heading": "8. Security measures",
+            "blocks": [
+              {
+                "p": "We take the following measures to prevent leaks, loss or damage of personal data and otherwise keep it secure."
+              },
+              {
+                "h3": "Basic policy"
+              },
+              {
+                "p": "This policy is our basic policy for handling personal data properly, including compliance with the law and a point of contact."
+              },
+              {
+                "h3": "Rules for handling personal data"
+              },
+              {
+                "p": "Our internal rules and design documents set out how personal data is handled at each stage (collection, use, storage, provision and deletion) and who is responsible."
+              },
+              {
+                "h3": "Organisational measures"
+              },
+              {
+                "ul": [
+                  "We have appointed a personal information protection manager and made responsibilities for handling personal data clear.",
+                  "Only staff who need it can access Customer Data, and access is recorded. When our staff access Customer Data, the access is recorded in the Customer's audit log.",
+                  "We have a process for reporting and responding to incidents such as leaks."
+                ]
+              },
+              {
+                "h3": "Human measures"
+              },
+              {
+                "ul": [
+                  "We train staff who handle personal data and bind them to confidentiality."
+                ]
+              },
+              {
+                "h3": "Physical measures"
+              },
+              {
+                "ul": [
+                  "Customer Data is stored in our cloud providers' data centres (Tokyo), whose physical security they manage.",
+                  "We protect the devices we use for work against theft and loss."
+                ]
+              },
+              {
+                "h3": "Technical measures"
+              },
+              {
+                "ul": [
+                  "All connections are encrypted (TLS), and stored data is encrypted at the infrastructure level.",
+                  "Credentials for connected services (such as access tokens) are additionally encrypted by the application.",
+                  "Each organisation's data is kept separate, with row-level access control in the database so that no organisation can reach another's data.",
+                  "Users can turn on two-step verification with an authenticator app. Our admin tools are limited to authorised staff and require two-step verification.",
+                  "Sign-in attempts are recorded and repeated failures are detected. Repeated wrong two-step verification codes lock the account for a while.",
+                  "We regularly scan the software the Service depends on for vulnerabilities.",
+                  "We back up the database daily with encryption and practise restoring it."
+                ]
+              },
+              {
+                "h3": "Understanding the foreign environment"
+              },
+              {
+                "p": "Personal data is stored in Japan. Information handled by US providers in the United States is described in “6. Service providers and third parties in foreign countries”. We take our security measures with each country's personal information protection system in mind."
+              }
+            ]
+          },
+          {
+            "heading": "9. Incidents",
+            "blocks": [
+              {
+                "p": "If personal data is or may have been leaked, lost or damaged, we act at once to contain it and investigate the cause. Where the APPI requires it, we report to the Personal Information Protection Commission and notify the people affected."
+              },
+              {
+                "p": "If the incident concerns Customer Data, we notify the Customer without undue delay and give it the information and help it needs to meet its own legal obligations to report and notify."
+              }
+            ]
+          },
+          {
+            "heading": "10. Your rights and requests",
+            "blocks": [
+              {
+                "h3": "If you have an account"
+              },
+              {
+                "p": "For personal data we hold about you (such as your account details), you can ask us to tell you the purposes of use; to disclose it (including records of provision to third parties); to correct, add to or delete it; to stop using it or erase it; and to stop providing it to third parties."
+              },
+              {
+                "ul": [
+                  "You can change your name and other account details in the app's settings (Profile) at any time.",
+                  "You can download your data from the app's settings.",
+                  "You can request deletion of your account in the app's settings (it is deleted after a 30-day grace period).",
+                  "For other requests, email <mail>privacy@the-unchain.com</mail>. After confirming your identity, we will respond without delay as the law requires, normally electronically. We charge no fee."
+                ]
+              },
+              {
+                "h3": "If you are an external person (for example, the other side of a meeting)"
+              },
+              {
+                "p": "Information about people outside an organisation that uses Pulse, such as meeting participants or business contacts, is that organisation's Customer Data. Please send requests for disclosure, correction, deletion or suspension of use to the organisation that recorded the information. If you contact us directly, we will pass your request to the organisation concerned and help it respond."
+              },
+              {
+                "p": "An organisation's admins can export the data about a specific person (as JSON) and delete everything about that person in the Service. A deleted person is excluded from further recording so that their information is not rebuilt from later meetings."
+              }
+            ]
+          },
+          {
+            "heading": "11. Cookies and external transmission",
+            "blocks": [
+              {
+                "p": "This website (www.pulse.co.jp) uses no cookies for analytics or advertising. It keeps the parameters showing how you reached it (such as utm_source) in your browser's session storage while you browse, and sends them with an enquiry."
+              },
+              {
+                "p": "The web app and Pulse ID use cookies to keep you signed in and to remember display settings. The web app also uses PostHog's cookies and local storage for usage analytics. If you turn cookies off in your browser, you may not be able to sign in."
+              },
+              {
+                "p": "The information sent from your device to outside providers, the recipients and the purposes are published in our <external>notice on external transmission</external>."
+              }
+            ]
+          },
+          {
+            "heading": "12. Changes to this policy",
+            "blocks": [
+              {
+                "p": "We may change this policy when laws or the Service change. Changes are posted on this page with the date of the last update. We announce material changes in the Service or by email before they take effect."
+              }
+            ]
+          },
+          {
+            "heading": "13. Company details and contact",
+            "blocks": [
+              {
+                "ul": [
+                  "Company: UNCHAIN, Inc. (UNCHAIN株式会社)",
+                  "Address: Oyster Building 2F, 1-5-1 Nihonbashi Kakigaracho, Chuo-ku, Tokyo, Japan",
+                  "Representative: Lui Ebina, Representative Director",
+                  "Personal information protection manager: <mail>privacy@the-unchain.com</mail>"
+                ]
+              },
+              {
+                "p": "Please send questions, comments, complaints and requests about personal information to the personal information protection manager by email."
+              },
+              {
+                "p": "This policy is written in Japanese, and this English version is a translation for reference. If they differ, the Japanese version prevails."
+              }
+            ]
+          }
+        ]
       }
     },
     "security": {
@@ -1128,8 +1500,8 @@
       },
       "block2": {
         "basics": "The basics",
-        "pulseAppDesktopMacos": "Pulse is an app for Desktop (macOS and Windows), a lot like Apple Notes or Notion. It works with Google Workspace or Microsoft login and integrates with your calendar.",
-        "haveManuallyStartPulse": "You have to manually start Pulse for a meeting (it won't auto-join or auto-record anything). Pulse then accesses your microphone audio, and audio on your computer, and transcribes it. It does not add a bot to your video call.",
+        "pulseAppDesktopMacos": "Pulse is an app for Desktop (macOS and Windows), a lot like Apple Notes or Notion. You sign in with Google or with an email address and password, and it integrates with your Google or Microsoft 365 calendar.",
+        "haveManuallyStartPulse": "Recording starts when you click. Only if you turn on “Start recording automatically” (off by default) does Pulse start recording by itself, when the call of a scheduled meeting begins. Pulse then accesses your microphone audio, and audio on your computer, and transcribes it. It does not add a bot to your video call.",
         "pulseWorksAnyMeeting": "Pulse works with any meeting platform. Zoom, Meet, Teams, you name it.",
         "pulseUsesBestClass": "Pulse uses best-in-class transcription providers and AI providers to summarize your meeting.",
         "modelTraining": "Model training",
@@ -1141,20 +1513,20 @@
         "userControlWhoSees": "As a user, you control who sees your notes. Notes are private by default, until you choose to share them with others.",
         "canDeleteIndividualNotes": "You can delete individual notes, or request deletion of all your data at any time.",
         "everythingStoredIndustryStandard": "Everything stored in industry standard, encrypted infrastructure",
-        "notesStoredRegionVirtual": "Notes are stored in an in-region Virtual Private Cloud. They are encrypted at rest and in transit. They are backed up daily.",
+        "notesStoredRegionVirtual": "Notes are stored in the cloud in Japan (Tokyo). They are encrypted at rest and in transit, and backed up daily to encrypted backups kept for 30 days.",
         "reHereIfNeed": "We're here if you need us",
         "ifHaveMoreQuestions": "If you have more questions, please <a>reach out to our team.</a>",
         "soc2": "SOC 2",
         "rePreparingIndependentSoc": "We're preparing an independent SOC 2 Type II audit of our security practices.",
         "seeTrustPage": "See our Trust page",
-        "gdprAppi": "GDPR · APPI",
-        "reCommittedGdprAppi": "We're committed to GDPR and APPI compliance and have a Data Processing Agreement available upon request.",
+        "gdprAppi": "APPI",
+        "reCommittedGdprAppi": "We handle data in line with Japan's Act on the Protection of Personal Information and process meeting content on your organisation's behalf. If your organisation needs a data processing agreement, contact privacy@the-unchain.com to discuss it.",
         "readPrivacyPolicy": "Read our Privacy Policy"
       },
       "block3": {
         "dataSecurity": "Data Security",
         "howDoesPulseSecure": "How does Pulse secure customer data?",
-        "encryptionRestTransitLeast": "Encryption at rest and in transit, least-privilege access, audit logs and vulnerability scanning.",
+        "encryptionRestTransitLeast": "Encryption at rest and in transit, least-privilege access, two-step verification, audit logs and vulnerability scanning.",
         "doesPulseWorkLocally": "Does Pulse work locally or send data to the cloud?",
         "audioCapturedLocallySent": "Audio is captured locally and sent encrypted to the cloud only for transcription and summarization. Audio is not stored.",
         "howDoesPulseManage": "How does Pulse manage security vulnerabilities?",
@@ -1165,19 +1537,19 @@
         "soc2TypeIi": "SOC 2 Type II is in progress; ISMS is planned.",
         "howCanIReport": "How can I report security vulnerabilities?",
         "emailSecurityLlFollow": "Email security@ and we'll follow our disclosure policy.",
-        "doSupportSsoSaml": "Do you support SSO/SAML?",
-        "yesEnterprisePlan": "Yes, on the Enterprise plan."
+        "twoStepVerification": "Do you support two-step verification?",
+        "twoStepVerificationAnswer": "Yes. You can turn on two-step verification with an authenticator app (codes plus backup codes) in Pulse ID; once it is on, signing in with a password asks for a code. Our staff's admin tools require it. SSO/SAML is not supported at this time."
       },
       "block4": {
         "dataStorageProcessing": "Data Storage & Processing",
         "whereMyDataStored": "Where is my data stored?",
-        "regionCloudInfrastructure": "In in-region cloud infrastructure.",
+        "regionCloudInfrastructure": "The database, hosting and backups are in Japan (Tokyo). Transcription and AI processing are done by providers in the United States (see our <a>subprocessor list</a>).",
         "whichSubprocessorsDoUse": "Which subprocessors do you use?",
-        "publishListTranscriptionAi": "We publish a list of transcription, AI and infrastructure providers and notify before changes.",
+        "publishListTranscriptionAi": "We publish our transcription, AI and infrastructure providers on our <a>subprocessor list</a> and, as a rule, announce changes at least 30 days in advance.",
         "howLongDataRetained": "How long is data retained?",
-        "untilDeleteEnterpriseCan": "Until you delete it. Enterprise can set auto-deletion periods.",
+        "orgRetentionPeriod": "Data is deleted automatically after your organisation's retention period, 12 months by default. Admins can choose 6, 12, 24 or 36 months, or keep forever. Notes in the trash are permanently deleted after 30 days.",
         "canIExportMy": "Can I export my data?",
-        "exportNotesTranscriptsMarkdown": "Export notes and transcripts as markdown or JSON at any time."
+        "exportOwnAndOrgData": "Yes. Anyone can download their own data in Settings, and admins can export all of the organisation's notes as Markdown and its data as JSON."
       },
       "block5": {
         "termsPolicies": "Terms & Policies",
@@ -1185,8 +1557,12 @@
         "termsService": "Our terms of service",
         "privacy": "Privacy",
         "howHandlePersonalData": "How we handle personal data",
-        "reports": "Reports",
-        "auditReportsQuestionnairesUnder": "Audit reports & questionnaires (under NDA)"
+        "subprocessors": "Subprocessors",
+        "subprocessorsDesc": "Who processes data for us, and where",
+        "externalTransmission": "External transmission",
+        "externalTransmissionDesc": "What your device sends to other providers",
+        "reports": "Questionnaires",
+        "questionnairesOnRequest": "Security questionnaires, answered on request"
       },
       "block6": {
         "readyCalmerMoreProductive": "Ready for calmer, more productive meetings?",
@@ -1361,28 +1737,409 @@
         "startFreeTrialBook": "<a>Start a free trial</a>"
       }
     },
+    "subprocessors": {
+      "block1": {
+        "title": "Subprocessors",
+        "updated": "Last Updated: November 3, 2026",
+        "intro": [
+          "To provide Pulse, UNCHAIN, Inc. (“we”) entrusts part of the processing of Customer Data (meeting audio, transcripts, notes, imported calendar events, email and chat, and so on) and account information to the following providers (subprocessors).",
+          "The database, the application runtime, the storage for audio and files, and the backups are all in Japan (Tokyo). AI processing, transcription, usage analytics, payments and email delivery are carried out by US providers in the United States. For transfers to third parties in foreign countries, see “6. Service providers and third parties in foreign countries” in our <privacy>Privacy policy</privacy>."
+        ],
+        "sections": [
+          {
+            "heading": "1. Subprocessors",
+            "blocks": [
+              {
+                "table": {
+                  "head": [
+                    "Provider (headquarters)",
+                    "Purpose",
+                    "Personal data involved",
+                    "Where it is processed"
+                  ],
+                  "rows": [
+                    [
+                      "Vercel (United States)",
+                      "Runtime for the web app and Pulse ID; storage for meeting audio and library files (private storage); routing calls to the AI providers (AI Gateway)",
+                      "Information the Service handles (while processing it), meeting audio before transcription, library files",
+                      "Japan (Tokyo). The AI Gateway routes calls to the AI providers below (United States)"
+                    ],
+                    [
+                      "Supabase (United States)",
+                      "Database (the web app and Pulse ID)",
+                      "All stored information",
+                      "Japan (Tokyo)"
+                    ],
+                    [
+                      "Wasabi (United States)",
+                      "Storage of database backups (encrypted, kept 30 days)",
+                      "All information in the database (encrypted)",
+                      "Japan (Tokyo)"
+                    ],
+                    [
+                      "Anthropic (United States)",
+                      "Writing notes, summaries and briefs; the post-meeting agent; web research before meetings",
+                      "Transcripts, notes, extracted facts, participants' names and companies",
+                      "United States"
+                    ],
+                    [
+                      "OpenAI (United States)",
+                      "Fact extraction; embeddings for search; backup transcription; text-to-speech",
+                      "Transcripts, imported email and chat, participants' names and email addresses",
+                      "United States"
+                    ],
+                    [
+                      "Google (United States)",
+                      "Answers in Ask (Gemini API)",
+                      "Extracted facts, notes",
+                      "United States"
+                    ],
+                    [
+                      "ElevenLabs (United States)",
+                      "Transcription and live captions",
+                      "Meeting audio; participants' and companies' names to improve recognition",
+                      "United States"
+                    ],
+                    [
+                      "AssemblyAI (United States)",
+                      "Live captions (backup)",
+                      "Meeting audio; participants' and companies' names",
+                      "United States"
+                    ],
+                    [
+                      "PostHog (United States)",
+                      "Usage analytics, session recordings (text masked), desktop app logs",
+                      "User ID, name, email address, organisation name, usage events, session recordings with text masked, app logs",
+                      "United States"
+                    ],
+                    [
+                      "Stripe (United States)",
+                      "Payments",
+                      "Payer's email address, user and organisation IDs, card details (collected by Stripe directly)",
+                      "United States"
+                    ],
+                    [
+                      "Resend (United States)",
+                      "Sending notice emails (confirmation of account deletion, change of billing contact and similar)",
+                      "Recipient's email address, email body",
+                      "United States"
+                    ]
+                  ]
+                }
+              },
+              {
+                "p": "We use Anthropic, OpenAI and Google under terms under which data sent through their APIs is not used to train their models. We do not train AI models on Customer Data ourselves either."
+              },
+              {
+                "p": "Cloudflare provides only DNS (name resolution) for our domains and does not process personal data."
+              }
+            ]
+          },
+          {
+            "heading": "2. Subprocessors and integrations",
+            "blocks": [
+              {
+                "p": "The following are integrations, used only when a customer turns them on, and are not subprocessors: Sign in with Google, Google Calendar, Gmail, Google Drive, Google Docs, Microsoft 365 (Outlook, Teams), HubSpot, Salesforce, Slack, Notion, Chatwork, Backlog, kintone, Garoon, Sansan and LINE WORKS."
+              },
+              {
+                "p": "Data exchanged with an integration (importing events or email, exporting notes, applying CRM updates and so on) moves on the customer's instruction. How the integration handles it is governed by the customer's agreement with that provider and the provider's own policies. A customer can disconnect an integration in the Service's settings at any time."
+              }
+            ]
+          },
+          {
+            "heading": "3. Notice of changes",
+            "blocks": [
+              {
+                "p": "As a rule, we announce new or changed subprocessors on this page at least 30 days in advance. Where a change is urgent, for example for security, we announce it promptly after making it."
+              }
+            ]
+          },
+          {
+            "heading": "4. Contact",
+            "blocks": [
+              {
+                "p": "Send questions or comments about our subprocessors to <mail>privacy@the-unchain.com</mail>."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "external_transmission": {
+      "block1": {
+        "title": "External transmission",
+        "updated": "Last Updated: November 3, 2026",
+        "intro": [
+          "In line with Article 27-12 of Japan's Telecommunications Business Act, UNCHAIN, Inc. (“we”) publishes below what information is sent from the devices of people using our website and Pulse to outside providers, who receives it, and why."
+        ],
+        "sections": [
+          {
+            "heading": "1. This website (www.pulse.co.jp)",
+            "blocks": [
+              {
+                "p": "This website uses no analytics tools, advertising tags or social media embeds. Fonts and images are served from our own server. The only transmission to an outside provider happens when you submit the contact form:"
+              },
+              {
+                "table": {
+                  "head": [
+                    "Recipient",
+                    "Information sent",
+                    "Purpose"
+                  ],
+                  "rows": [
+                    [
+                      "Web3Forms (operated by Web3Creative, India; servers in the United States)",
+                      "When you submit the contact form: the fields you fill in (name, company, email address, role, message and so on), the parameters showing how you reached the site (such as utm_source, if any), your IP address and browser information",
+                      "Delivering your enquiry to us"
+                    ]
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "heading": "2. Pulse (the web app, Pulse ID and the desktop apps)",
+            "blocks": [
+              {
+                "p": "The Pulse web app (app.pulse.co.jp), Pulse ID (auth.pulse.co.jp) and the desktop apps (macOS, Windows) send the following."
+              },
+              {
+                "table": {
+                  "head": [
+                    "Recipient",
+                    "Information sent",
+                    "Purpose"
+                  ],
+                  "rows": [
+                    [
+                      "PostHog (United States)",
+                      "While the web app is open (including inside the desktop apps): user ID, name, email address, organisation ID and name, the path of each page viewed (without the URL's query), clicks, typing and other actions (all on-screen and typed text masked), session recordings with text masked, error details, browser, operating system and screen size, an identifier kept in a cookie and local storage, and IP address. Sent through /ingest on our own domain",
+                      "Understanding how the Service is used; finding and investigating bugs; improving features and usability"
+                    ],
+                    [
+                      "Stripe (United States)",
+                      "When you move to Stripe's screen to subscribe or change your payment method: the checkout session's identifier and the payer's email address. Card details are entered on Stripe's screen and never reach us",
+                      "Payments"
+                    ],
+                    [
+                      "Google (United States)",
+                      "When you sign in with Google or connect a Google service: our app's identifier, the permissions requested and a verification value (you move to Google's screen). When you pick a Google Drive file in the library: your IP address, browser information and Google cookies, sent as Google's scripts and picker load",
+                      "Sign-in, authorising connections, choosing files"
+                    ],
+                    [
+                      "ElevenLabs (United States), AssemblyAI (United States)",
+                      "While recording with live captions on (browser recording and the desktop apps): the meeting audio (your side and the other side), a short-lived connection token, and participants' and companies' names to improve recognition",
+                      "Live captions"
+                    ],
+                    [
+                      "Vercel (United States)",
+                      "When you upload a file to the library: the file and a short-lived upload token (sent straight to our private storage)",
+                      "Storing the file"
+                    ],
+                    [
+                      "Integration providers (HubSpot, Salesforce, Microsoft, Slack and others)",
+                      "When you set up an integration: our app's identifier, the permissions requested and a verification value (you move to the provider's sign-in screen)",
+                      "Authorising the integration"
+                    ]
+                  ]
+                }
+              },
+              {
+                "p": "In addition, the desktop apps send logs of how they run (counts, reasons, error codes and similar; never names, meeting titles or note text) to our server, which forwards them to PostHog so that we can investigate problems."
+              }
+            ]
+          },
+          {
+            "heading": "3. How to stop a transmission",
+            "blocks": [
+              {
+                "ul": [
+                  "<b>PostHog</b>: Pulse has no setting to turn it off. Blocking requests to app.pulse.co.jp/ingest with a browser extension or similar stops your browser from sending (this does not work inside the desktop apps). To have your analytics data deleted, contact <mail>privacy@the-unchain.com</mail>.",
+                  "<b>Live captions (ElevenLabs, AssemblyAI)</b>: an organisation's admin can turn live captions off in Pulse's settings.",
+                  "<b>Contact form (Web3Forms)</b>: you can email contact@the-unchain.com instead of using the form.",
+                  "<b>Stripe, Google and integrations</b>: nothing is sent unless you use these features."
+                ]
+              }
+            ]
+          },
+          {
+            "heading": "4. Related pages and contact",
+            "blocks": [
+              {
+                "p": "See our <privacy>Privacy policy</privacy> for how we handle personal information, and our <subprocessors>subprocessor list</subprocessors> for the providers we entrust with processing. Send questions to <mail>privacy@the-unchain.com</mail>."
+              }
+            ]
+          }
+        ]
+      }
+    },
     "terms": {
       "block1": {
-        "termsService": "Terms of service",
-        "lastUpdatedSeptember1": "Last Updated: September 1, 2026",
-        "text": "1. Scope",
-        "theseTermsGovernUse": "These terms govern use of the meeting-notes service “Pulse” (the “Service”) provided by UNCHAIN, Inc. (“we”). By using the Service you agree to these terms.",
-        "text2": "2. Accounts",
-        "mustRegisterAccurateInformation": "You must register accurate information and safeguard your credentials. Notify us promptly of any unauthorized use.",
-        "text3": "3. Recording and consent",
-        "responsibleComplyingApplicableLaw": "You are responsible for complying with applicable law and for informing participants and obtaining consent when recording or transcribing meetings. We provide features that support consent but do not obtain it on your behalf.",
-        "text4": "4. Your data",
-        "ownNotesTranscriptsMetadata": "You own the notes, transcripts and metadata you create (“User Data”). We process User Data only as needed to provide the Service and never use it to train AI models.",
-        "text5": "5. Prohibited use",
-        "unlawfulUseInfringingThird": "Unlawful use, infringing third-party rights, interfering with the Service, reverse engineering and recording others without consent are prohibited.",
-        "text6": "6. Fees",
-        "feesPaymentTermsPaid": "Fees and payment terms for paid plans are set out on the pricing page. Use during the beta is free.",
-        "text7": "7. Disclaimer",
-        "serviceProvidedDoNot": "The Service is provided as-is; we do not guarantee transcript or summary accuracy. To the extent permitted by law our liability is capped at fees paid in the preceding 12 months.",
-        "text8": "8. Changes",
-        "mayChangeTheseTerms": "We may change these terms or the Service; material changes will be notified in advance.",
-        "text9": "9. Governing law",
-        "theseTermsGovernedJapanese": "These terms are governed by Japanese law with exclusive jurisdiction of the Tokyo District Court."
+        "title": "Terms of service",
+        "updated": "Last Updated: November 3, 2026",
+        "intro": [],
+        "sections": [
+          {
+            "heading": "1. Scope",
+            "blocks": [
+              {
+                "p": "These terms govern use of the meeting-notes service “Pulse” (the “Service”) provided by UNCHAIN, Inc. (“we”). By using the Service you agree to these terms."
+              }
+            ]
+          },
+          {
+            "heading": "2. Accounts",
+            "blocks": [
+              {
+                "p": "You must register accurate information and safeguard your credentials. Notify us promptly of any unauthorized use."
+              }
+            ]
+          },
+          {
+            "heading": "3. Recording and consent",
+            "blocks": [
+              {
+                "p": "When recording or transcribing a meeting, you are responsible for complying with applicable law, your organisation's rules and your agreements with the other side, and for telling participants that the meeting is recorded and transcribed. Where the law requires it (for example, when the conversation includes sensitive personal information), you must obtain the participants' consent."
+              },
+              {
+                "p": "The Service gives you a short notice to tell participants when recording starts (you can paste it into the meeting chat) and reminders to tell them, but we do not notify participants or obtain consent on your behalf. “Start recording automatically” is off by default. If you turn it on, recording starts without a confirmation when the call of a scheduled meeting begins, so take particular care to tell participants."
+              },
+              {
+                "p": "At registration you confirm that you have understood and accept this section, and we keep a record of it."
+              }
+            ]
+          },
+          {
+            "heading": "4. Your data and our roles",
+            "blocks": [
+              {
+                "p": "The notes, transcripts, metadata and imported data that you enter into or create with the Service (“User Data”) belong to you or to the organisation you belong to (the “Organisation”)."
+              },
+              {
+                "p": "For personal information in User Data, the Organisation is the business responsible under Japan's Act on the Protection of Personal Information (the controller), and we process User Data on the Organisation's behalf, as entrusted by it, to provide the Service. We never use User Data to train AI models and, except as set out in section 5, we do not use it for any purpose other than providing the Service."
+              },
+              {
+                "p": "How we handle personal information is set out in our <privacy>Privacy policy</privacy>."
+              }
+            ]
+          },
+          {
+            "heading": "5. Improving the Service",
+            "blocks": [
+              {
+                "p": "We may use User Data to evaluate and improve the quality of the Service (for example, checking the accuracy of transcripts, summaries and extraction, or investigating bugs). Even then, we never use User Data to train AI models."
+              },
+              {
+                "p": "Our staff access User Data for this purpose only as far as needed, and the access is recorded in the Organisation's audit log."
+              },
+              {
+                "p": "An admin of the Organisation can turn off this use in the Service's settings. The change takes effect within 30 days."
+              }
+            ]
+          },
+          {
+            "heading": "6. Subprocessors",
+            "blocks": [
+              {
+                "p": "To provide the Service, we entrust part of the processing of User Data to third parties (“subprocessors”). Our <subprocessors>subprocessor list</subprocessors> names them with their purpose, the data they handle and where they process it."
+              },
+              {
+                "p": "We bind subprocessors to data protection obligations by contract or terms of service and supervise them as necessary."
+              },
+              {
+                "p": "As a rule, we announce new or changed subprocessors on the subprocessor list at least 30 days in advance. Where a change is urgent, for example for security, we announce it promptly after making it."
+              },
+              {
+                "p": "Data sent to integrations the Organisation turns on (such as HubSpot, Salesforce or Slack) is sent on the Organisation's instruction and is not processing by a subprocessor. How those services handle it is governed by the Organisation's agreement with them."
+              }
+            ]
+          },
+          {
+            "heading": "7. Confidentiality",
+            "blocks": [
+              {
+                "p": "We treat User Data as confidential: we use it only for the purposes in these terms and do not disclose it to third parties without the Organisation's consent, except to subprocessors as needed to provide the Service, or where required by law or by an order of a court or public authority. Where we must disclose it by law, we tell the Organisation in advance where the law permits."
+              },
+              {
+                "p": "You must not disclose to third parties, without our consent, non-public information about the Service that we disclose to you and identify as confidential."
+              },
+              {
+                "p": "We limit access to User Data to staff who need it and bind them to confidentiality."
+              }
+            ]
+          },
+          {
+            "heading": "8. Security incidents",
+            "blocks": [
+              {
+                "p": "If we become aware of a leak, loss or damage of, or unauthorised access to, User Data (a “security incident”), we notify the Organisation without undue delay, with what happened, its scope and the measures taken."
+              },
+              {
+                "p": "We act to contain the incident and investigate its cause, and give the Organisation the help it needs to report to the authorities and notify the people affected under the Act on the Protection of Personal Information."
+              }
+            ]
+          },
+          {
+            "heading": "9. Prohibited use",
+            "blocks": [
+              {
+                "p": "Unlawful use, infringing third-party rights, interfering with the Service, reverse engineering and recording others without consent are prohibited."
+              }
+            ]
+          },
+          {
+            "heading": "10. Fees",
+            "blocks": [
+              {
+                "p": "Fees and payment terms for paid plans are set out on the pricing page. Use during the beta is free."
+              }
+            ]
+          },
+          {
+            "heading": "11. Export and deletion of data",
+            "blocks": [
+              {
+                "p": "You can download your own data in the Service's settings. An admin of the Organisation can export all of its notes (as Markdown) and data (as JSON)."
+              },
+              {
+                "p": "An admin can remove members from the Organisation and can request deletion of the Organisation. For 30 days after the request, the deletion can be cancelled and data can still be exported; after that grace period, the Organisation's data is deleted. Deleted data disappears from backups within a further 30 days."
+              },
+              {
+                "p": "If you request deletion of your account, it is deleted after a 30-day grace period. Notes shared in the Organisation's spaces and other business records stay with the Organisation."
+              },
+              {
+                "p": "If we end the Service, we give notice a reasonable time in advance so that Organisations can export their data."
+              },
+              {
+                "p": "Information we must keep by law, such as billing records, is kept for the period the law requires."
+              }
+            ]
+          },
+          {
+            "heading": "12. Disclaimer",
+            "blocks": [
+              {
+                "p": "The Service is provided as-is; we do not guarantee transcript or summary accuracy. To the extent permitted by law our liability is capped at fees paid in the preceding 12 months."
+              }
+            ]
+          },
+          {
+            "heading": "13. Changes",
+            "blocks": [
+              {
+                "p": "We may change these terms or the Service; material changes will be notified in advance."
+              }
+            ]
+          },
+          {
+            "heading": "14. Governing law",
+            "blocks": [
+              {
+                "p": "These terms are governed by Japanese law with exclusive jurisdiction of the Tokyo District Court."
+              }
+            ]
+          }
+        ]
       }
     },
     "titles": {
@@ -1398,6 +2155,8 @@
       "careers": "Careers — Pulse",
       "terms": "Terms — Pulse",
       "privacy": "Privacy — Pulse",
+      "subprocessors": "Subprocessors — Pulse",
+      "external_transmission": "External transmission — Pulse",
       "solutions_sales": "Sales — Pulse",
       "solutions_customer_success": "Customer Success — Pulse",
       "solutions_marketing": "Marketing — Pulse",

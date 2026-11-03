@@ -656,6 +656,15 @@ footer{padding-block:72px 0}
 .legal-doc p,.legal-doc li{margin-bottom:12px}
 .legal-doc ul{list-style:disc;padding-left:20px}
 .legal-doc .upd{font-family:var(--serif);color:var(--muted);margin:12px 0 32px}
+/* Added 2026-11-03 for the rewritten legal pages (privacy, terms, subprocessors, external transmission) */
+.legal-doc h3{font-size:1.125rem;margin:28px 0 10px;color:var(--ink);line-height:1.4}
+.legal-doc li strong,.legal-doc p strong{font-weight:600;color:var(--ink)}
+.legal-doc .legal-table{overflow-x:auto;margin:16px 0 28px;border:1px solid var(--line);border-radius:10px}
+.legal-doc table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.7}
+.legal-doc table:has(th:nth-child(3)){min-width:600px}
+.legal-doc th,.legal-doc td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.legal-doc th{background:var(--surface);color:var(--ink);font-weight:500;white-space:nowrap}
+.legal-doc tbody tr:last-child td{border-bottom:0}
 
 /* Statement block (Fathom) */
 .statement{text-align:center;padding-block:120px;display:grid;gap:40px;justify-items:center}

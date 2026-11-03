@@ -60,10 +60,10 @@ export function Block3() {
           </details>
           <details>
             <summary>
-              {t("doSupportSsoSaml")}
+              {t("twoStepVerification")}
             </summary>
             <div className="a">
-              {t("yesEnterprisePlan")}
+              {t("twoStepVerificationAnswer")}
             </div>
           </details>
         </div>
