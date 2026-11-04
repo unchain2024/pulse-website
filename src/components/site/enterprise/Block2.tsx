@@ -19,7 +19,7 @@ export function Block2() {
             </h4>
             <ul>
               <li>
-                {t("deleteNotesAndPeople")}
+                {t("transcriptRedactionDeletionAvailable")}
               </li>
               <li>
                 {t("conversationDataNeverUsed")}
@@ -29,18 +29,18 @@ export function Block2() {
               </li>
             </ul>
             <h4>
-              {t("privateByDefault")}
+              {t("notifyOthersWhenPulse")}
             </h4>
             <ul>
               <li>
-                {t("ownerDecidesSharing")}
+                {t("automaticNotificationsWhenPulse")}
               </li>
               <li>
-                {t("adminReadsLogged")}
+                {t("adminsCanTurnNotifications")}
               </li>
             </ul>
             <div className="badge-row">
-              {t.rich("complianceBadges", {
+              {t.rich("soc2TypeIi", {
                 span: (chunks: ReactNode) => <span>{chunks}</span>,
                 i: (chunks: ReactNode) => <i>{chunks}</i>,
               })}

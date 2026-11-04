@@ -19,7 +19,7 @@ export function HeroL() {
         </p>
         <div className="freebar" style={{ maxWidth: "640px", fontFamily: "var(--sans)" }}>
           {t.rich("encourageSecurityVulnerabilityReports", {
-            a: (chunks: ReactNode) => <Link className="link" href={`/${locale}/contact`}>{chunks}</Link>,
+            a: (chunks: ReactNode) => <Link className="link" href={`/${locale}/help`}>{chunks}</Link>,
           })}
         </div>
       </div>

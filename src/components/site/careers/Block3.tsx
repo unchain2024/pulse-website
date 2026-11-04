@@ -14,16 +14,16 @@ export function Block3() {
       >
         <div className="legal-doc" style={{ margin: "0", maxWidth: "none" }}>
           <h2 style={{ marginTop: "0" }}>
-            {t("valueContext")}
+            {t("makeDentUniverse")}
           </h2>
           <p>
-            {t("valueContextText")}
+            {t("veAlwaysAdmiredComputing")}
           </p>
           <h2>
-            {t("valueTrust")}
+            {t("reHumansBuildingHumans")}
           </h2>
           <p>
-            {t("valueTrustText")}
+            {t("buildingGreatProductRare")}
           </p>
           <h2>
             {t("designedTokyoBuiltJapanese")}
