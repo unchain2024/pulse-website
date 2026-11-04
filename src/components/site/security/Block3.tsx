@@ -36,18 +36,10 @@ export function Block3() {
           </details>
           <details>
             <summary>
-              {t("doesPulseConductPenetration")}
-            </summary>
-            <div className="a">
-              {t("annualThirdPartyPenetration")}
-            </div>
-          </details>
-          <details>
-            <summary>
               {t("doesPulseHaveAny")}
             </summary>
             <div className="a">
-              {t("soc2TypeIi")}
+              {t("certificationsAnswer")}
             </div>
           </details>
           <details>

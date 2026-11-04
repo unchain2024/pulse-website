@@ -141,36 +141,6 @@ export function Block2() {
                     strokeLinejoin="round"
                     aria-hidden="true"
                   >
-                    <path d="M12 3l8 3.5v5.5c0 4.5-3.4 8.2-8 9.5-4.6-1.3-8-5-8-9.5V6.5z" />
-                    <path d="M9 12l2 2 4-4" />
-                  </svg>
-                </span>
-                <div>
-                  <b style={{ fontWeight: "500" }}>
-                    {t("soc2")}
-                  </b>
-                  <p>
-                    {t("rePreparingIndependentSoc")}
-                  </p>
-                  <Link className="link small" href={`/${locale}/help`}>
-                    {t("seeTrustPage")}
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <span className="ic" style={{ borderRadius: "50%" }}>
-                  <svg
-                    className=""
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
                     <circle cx="12" cy="12" r="9" />
                     <path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" />
                   </svg>

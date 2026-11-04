@@ -62,10 +62,10 @@ export function Block3() {
                   </svg>
                 </div>
                 <h4>
-                  {t("ssoScim")}
+                  {t("twoStepVerification")}
                 </h4>
                 <p>
-                  {t("samlSsoDirectorySync")}
+                  {t("twoStepVerificationText")}
                 </p>
               </div>
             </div>
