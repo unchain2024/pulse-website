@@ -1500,7 +1500,7 @@
       },
       "block2": {
         "basics": "The basics",
-        "pulseAppDesktopMacos": "Pulse is an app for Desktop (macOS and Windows), a lot like Apple Notes or Notion. You sign in with Google or with an email address and password, and it integrates with your Google or Microsoft 365 calendar.",
+        "pulseAppDesktopMacos": "Pulse is an app for Desktop (macOS and Windows). You sign in with Google or with an email address and password, and it integrates with your Google or Microsoft 365 calendar.",
         "haveManuallyStartPulse": "Recording starts when you click. Only if you turn on “Start recording automatically” (off by default) does Pulse start recording by itself, when the call of a scheduled meeting begins. Pulse then accesses your microphone audio, and audio on your computer, and transcribes it. It does not add a bot to your video call.",
         "pulseWorksAnyMeeting": "Pulse works with any meeting platform. Zoom, Meet, Teams, you name it.",
         "pulseUsesBestClass": "Pulse uses best-in-class transcription providers and AI providers to summarize your meeting.",

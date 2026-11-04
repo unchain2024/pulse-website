@@ -1500,7 +1500,7 @@
       },
       "block2": {
         "basics": "基本",
-        "pulseAppDesktopMacos": "Pulseはデスクトップ（macOS・Windows）向けのアプリで、Apple Notes や Notion のように使えます。Google アカウント、またはメールアドレスとパスワードでログインし、Google カレンダーや Microsoft 365 のカレンダーと連携します。",
+        "pulseAppDesktopMacos": "Pulseはデスクトップ（macOS・Windows）向けのアプリです。Google アカウント、またはメールアドレスとパスワードでログインし、Google カレンダーや Microsoft 365 のカレンダーと連携します。",
         "haveManuallyStartPulse": "録音は、あなたがクリックしたときに始まります。「自動で録音を始める」をオンにした場合に限り（初期設定はオフ）、予定のある会議の通話が始まると録音が始まります。PulseはPCの音声とマイクにアクセスし、文字起こしを行います。ボットが会議に参加することはありません。",
         "pulseWorksAnyMeeting": "Zoom、Meet、Teams など、どの会議プラットフォームでも動きます。",
         "pulseUsesBestClass": "文字起こしには実績のある音声認識プロバイダーを、要約にはAIプロバイダーを利用しています。",
