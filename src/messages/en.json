@@ -1101,7 +1101,7 @@
     "privacy": {
       "block1": {
         "title": "Privacy policy",
-        "updated": "Last Updated: November 3, 2026",
+        "updated": "Last Updated: November 4, 2026",
         "intro": [
           "UNCHAIN, Inc. (“we”) handles personal information in the meeting-notes service “Pulse” (the web app, the desktop apps, our sign-in service “Pulse ID” and this website; together, the “Service”) in accordance with Japan's Act on the Protection of Personal Information (the “APPI”) and other applicable laws, as set out in this policy."
         ],
@@ -1245,14 +1245,14 @@
                 "p": "The Service's database (including Pulse ID), the application runtime, the storage for meeting audio and library files, and the database backups are all in Japan (Tokyo). These providers (Supabase, Vercel and Wasabi) are US companies."
               },
               {
-                "h3": "Information handled in the United States"
+                "h3": "Information handled outside Japan"
               },
               {
-                "p": "AI processing (transcription, live captions, notes and summaries), usage analytics, payments and email delivery are carried out by US providers in the United States. The purpose and the information for each are on the <subprocessors>subprocessor list</subprocessors>."
+                "p": "AI processing (transcription, live captions, notes and summaries), usage analytics and payments are carried out by US providers. Notification emails are sent by a US provider (Resend) from Japan (Tokyo), which keeps delivery records in the United States. The purpose, the information and the processing location for each provider are on the <subprocessors>subprocessor list</subprocessors>."
               },
               {
                 "ul": [
-                  "<b>Country</b>: the United States of America (Anthropic, OpenAI, Google, ElevenLabs, AssemblyAI, PostHog, Stripe and Resend, including Vercel's AI Gateway, which routes calls to the AI providers)",
+                  "<b>Country</b>: the United States of America (Anthropic, OpenAI, Google, ElevenLabs, AssemblyAI, PostHog, Stripe and Resend, including Vercel's AI Gateway, which routes calls to the AI providers). Anthropic, Google and calls through the AI Gateway are not pinned to a country: the provider chooses where to process each request, so we cannot identify the country in advance, and data may be processed outside the United States. The main processing location is the United States. AssemblyAI processes live-caption audio at locations in the United States or the EU (the EU member states are countries the Personal Information Protection Commission has designated as protecting personal information to a standard equivalent to Japan's).",
                   "<b>Its personal information protection system</b>: the United States has no comprehensive federal law equivalent to the APPI; personal information is protected by Section 5 of the Federal Trade Commission Act, sector-specific federal laws, and state laws such as the California Consumer Privacy Act. For details, see the Personal Information Protection Commission's <ppc>survey of foreign personal information protection systems</ppc> (<ppcus>United States, federal</ppcus>; in Japanese).",
                   "<b>Measures the providers take</b>: our contract or terms with each provider (including their data processing terms) require them to handle the data only for the purposes we entrust, to keep it secure and to manage their own subcontractors. We use Anthropic, OpenAI and Google under terms under which data sent through their APIs is not used to train their models. Data is sent over encrypted connections (TLS), and we send only what each task needs."
                 ]
@@ -1500,7 +1500,7 @@
       },
       "block2": {
         "basics": "The basics",
-        "pulseAppDesktopMacos": "Pulse is an app for Desktop (macOS and Windows), a lot like Apple Notes or Notion. You sign in with Google or with an email address and password, and it integrates with your Google or Microsoft 365 calendar.",
+        "pulseAppDesktopMacos": "Pulse is an app for Desktop (macOS and Windows). You sign in with Google or with an email address and password, and it integrates with your Google or Microsoft 365 calendar.",
         "haveManuallyStartPulse": "Recording starts when you click. Only if you turn on “Start recording automatically” (off by default) does Pulse start recording by itself, when the call of a scheduled meeting begins. Pulse then accesses your microphone audio, and audio on your computer, and transcribes it. It does not add a bot to your video call.",
         "pulseWorksAnyMeeting": "Pulse works with any meeting platform. Zoom, Meet, Teams, you name it.",
         "pulseUsesBestClass": "Pulse uses best-in-class transcription providers and AI providers to summarize your meeting.",
@@ -1521,7 +1521,14 @@
         "seeTrustPage": "See our Trust page",
         "gdprAppi": "APPI",
         "reCommittedGdprAppi": "We handle data in line with Japan's Act on the Protection of Personal Information and process meeting content on your organisation's behalf. If your organisation needs a data processing agreement, contact privacy@the-unchain.com to discuss it.",
-        "readPrivacyPolicy": "Read our Privacy Policy"
+        "readPrivacyPolicy": "Read our Privacy Policy",
+        "iso27001": "Our work toward ISO/IEC 27001",
+        "iso27001Status": "We are preparing for certification to ISO/IEC 27001:2022, the international standard for information security management systems (ISMS). We are not certified yet.",
+        "iso27001Controls": "Following the standard's controls, we have put technical measures in place: encryption at rest and in transit (including the credentials for connected services), two-step verification (required for our internal tools), session time limits, a record of sign-ins, an audit log the application cannot change or delete, a record of our staff's access to customer data, masking of personal information in logs, automated dependency and secret scanning, a Content Security Policy, automatic deletion after the retention period, and regular backup restore tests.",
+        "iso27001Isms": "We are also putting in place the organisation and documents an ISMS needs: an information security policy, risk assessment and treatment, a Statement of Applicability, internal audits and management reviews.",
+        "iso27001Timeline": "We will announce it on this page once we are certified.",
+        "iso27001Card": "We are preparing for ISO/IEC 27001 (ISMS) certification.",
+        "iso27001Link": "See our progress"
       },
       "block3": {
         "dataSecurity": "Data Security",
@@ -1534,7 +1541,7 @@
         "doesPulseConductPenetration": "Does Pulse conduct penetration testing?",
         "annualThirdPartyPenetration": "Annual third-party penetration tests are planned.",
         "doesPulseHaveAny": "Does Pulse have any security certifications?",
-        "soc2TypeIi": "SOC 2 Type II is in progress; ISMS is planned.",
+        "soc2TypeIi": "We do not hold any third-party certification yet. We are preparing for ISO/IEC 27001 (ISMS) certification, and a SOC 2 Type II audit is in preparation.",
         "howCanIReport": "How can I report security vulnerabilities?",
         "emailSecurityLlFollow": "Email security@ and we'll follow our disclosure policy.",
         "twoStepVerification": "Do you support two-step verification?",
@@ -1740,10 +1747,10 @@
     "subprocessors": {
       "block1": {
         "title": "Subprocessors",
-        "updated": "Last Updated: November 3, 2026",
+        "updated": "Last Updated: November 4, 2026",
         "intro": [
           "To provide Pulse, UNCHAIN, Inc. (“we”) entrusts part of the processing of Customer Data (meeting audio, transcripts, notes, imported calendar events, email and chat, and so on) and account information to the following providers (subprocessors).",
-          "The database, the application runtime, the storage for audio and files, and the backups are all in Japan (Tokyo). AI processing, transcription, usage analytics, payments and email delivery are carried out by US providers in the United States. For transfers to third parties in foreign countries, see “6. Service providers and third parties in foreign countries” in our <privacy>Privacy policy</privacy>."
+          "The database, the application runtime, the storage for audio and files, and the backups are all in Japan (Tokyo). AI processing, transcription, live captions, usage analytics and payments are carried out by US providers, mainly in the United States. Some providers do not fix the country where they process data and may process it outside the United States (see “Where it is processed” in the table below). Notification emails are sent from Japan (Tokyo). For transfers to third parties in foreign countries, see “6. Service providers and third parties in foreign countries” in our <privacy>Privacy policy</privacy>."
         ],
         "sections": [
           {
@@ -1762,7 +1769,7 @@
                       "Vercel (United States)",
                       "Runtime for the web app and Pulse ID; storage for meeting audio and library files (private storage); routing calls to the AI providers (AI Gateway)",
                       "Information the Service handles (while processing it), meeting audio before transcription, library files",
-                      "Japan (Tokyo). The AI Gateway routes calls to the AI providers below (United States)"
+                      "Japan (Tokyo). Workflow run records (IDs, counts and the like; no meeting content) are stored in the United States. The AI Gateway routes calls to the AI providers below and may handle them at Vercel locations outside Japan; calls through the AI Gateway are not pinned to a country"
                     ],
                     [
                       "Supabase (United States)",
@@ -1780,7 +1787,7 @@
                       "Anthropic (United States)",
                       "Writing notes, summaries and briefs; the post-meeting agent; web research before meetings",
                       "Transcripts, notes, extracted facts, participants' names and companies",
-                      "United States"
+                      "United States and other countries (inference is not pinned to a country; data is stored in the United States)"
                     ],
                     [
                       "OpenAI (United States)",
@@ -1792,7 +1799,7 @@
                       "Google (United States)",
                       "Answers in Ask (Gemini API)",
                       "Extracted facts, notes",
-                      "United States"
+                      "United States and other countries (Google may store or process data transiently in any country where it has facilities)"
                     ],
                     [
                       "ElevenLabs (United States)",
@@ -1804,7 +1811,7 @@
                       "AssemblyAI (United States)",
                       "Live captions (backup)",
                       "Meeting audio; participants' and companies' names",
-                      "United States"
+                      "United States or the EU (routed automatically to the nearest location)"
                     ],
                     [
                       "PostHog (United States)",
@@ -1822,7 +1829,7 @@
                       "Resend (United States)",
                       "Sending notice emails (confirmation of account deletion, change of billing contact and similar)",
                       "Recipient's email address, email body",
-                      "United States"
+                      "Emails are sent from Japan (Tokyo); delivery records are stored in the United States"
                     ]
                   ]
                 }
