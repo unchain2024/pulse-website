@@ -1,7 +1,13 @@
-/** Installer files live in /public/downloads. Replace the files there (or the paths here) when a new build ships. */
+/**
+ * Installers come from the Pulse download portal, not from this repo. The link always redirects to the latest production
+ * build (channel=stable), so a new release needs no change here. Builds used to be committed to /public/downloads, which
+ * froze the site on an old build (2026-11-09: the Windows button was serving a Pulse Stage build).
+ * utm_mark=website tells these downloads apart from other links in the app's client_downloaded event.
+ */
+const PORTAL='https://download.pulse.co.jp/distributions/app/installers/latest?channel=stable&utm_mark=website';
 export const DOWNLOADS={
-  windows:{href:'/downloads/Pulse-Setup.exe',file:'Pulse-Setup.exe'},
-  mac:{href:'/downloads/Pulse.dmg',file:'Pulse.dmg'},
+  windows:{href:`${PORTAL}&platform=win`,file:'Pulse-Setup.exe'},
+  mac:{href:`${PORTAL}&platform=osx`,file:'Pulse.dmg'},
 } as const;
 
 export type DesktopPlatform=keyof typeof DOWNLOADS;

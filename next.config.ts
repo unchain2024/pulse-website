@@ -19,6 +19,15 @@ const nextConfig: NextConfig = {
       ],
     }];
   },
+  // The installers used to be committed to /public/downloads (frozen on an old Pulse Stage build until 2026-11-09).
+  // Links to those paths that were already handed out now go to the portal's latest production build (src/lib/download.ts).
+  async redirects() {
+    const portal = "https://download.pulse.co.jp/distributions/app/installers/latest?channel=stable&utm_mark=website";
+    return [
+      { source: "/downloads/Pulse-Setup.exe", destination: `${portal}&platform=win`, permanent: false },
+      { source: "/downloads/Pulse.dmg", destination: `${portal}&platform=osx`, permanent: false },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
