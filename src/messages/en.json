@@ -1747,7 +1747,7 @@
     "subprocessors": {
       "block1": {
         "title": "Subprocessors",
-        "updated": "Last Updated: November 4, 2026",
+        "updated": "Last Updated: November 9, 2026",
         "intro": [
           "To provide Pulse, UNCHAIN, Inc. (“we”) entrusts part of the processing of Customer Data (meeting audio, transcripts, notes, imported calendar events, email and chat, and so on) and account information to the following providers (subprocessors).",
           "The database, the application runtime, the storage for audio and files, and the backups are all in Japan (Tokyo). AI processing, transcription, live captions, usage analytics and payments are carried out by US providers, mainly in the United States. Some providers do not fix the country where they process data and may process it outside the United States (see “Where it is processed” in the table below). Notification emails are sent from Japan (Tokyo). For transfers to third parties in foreign countries, see “6. Service providers and third parties in foreign countries” in our <privacy>Privacy policy</privacy>."
@@ -1827,8 +1827,8 @@
                     ],
                     [
                       "Resend (United States)",
-                      "Sending notice emails (confirmation of account deletion, change of billing contact and similar)",
-                      "Recipient's email address, email body",
+                      "Sending notice emails (confirmation of account deletion, change of billing contact and similar) and invitation emails, which may go to people who do not use Pulse yet",
+                      "Recipient's email address, email body; for an invitation, the inviter's name, the organisation's name and the invitation link (never the content or title of a note)",
                       "Emails are sent from Japan (Tokyo); delivery records are stored in the United States"
                     ]
                   ]
