@@ -88,6 +88,12 @@ external-transmission) keep each document as data under `site.<page>.block1`
 blocks) and render it with `LegalDocument`, whose rich-text tags supply the links.
 Arrays must have the same length in both locales.
 
+**Security headers.** `next.config.ts` sends `X-Content-Type-Options`,
+`Referrer-Policy`, `X-Frame-Options: DENY` with `frame-ancestors 'none'`, and a
+`Permissions-Policy` that turns off camera, microphone, screen capture and
+location on every path. Embedding a page in a frame, or a feature that needs one
+of those permissions, means changing them there first.
+
 ## Known gaps, carried over from the prototype
 
 - **`/[locale]/demo` renders an empty page.** It was empty in the prototype too,
