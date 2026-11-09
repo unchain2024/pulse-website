@@ -1541,7 +1541,7 @@
         "doesPulseConductPenetration": "Does Pulse conduct penetration testing?",
         "annualThirdPartyPenetration": "Annual third-party penetration tests are planned.",
         "doesPulseHaveAny": "Does Pulse have any security certifications?",
-        "soc2TypeIi": "We do not hold any third-party certification yet. We are preparing for ISO/IEC 27001 (ISMS) certification, and a SOC 2 Type II audit is in preparation.",
+        "soc2TypeIi": "ISO/IEC 27001 (ISMS) is in progress, and SOC 2 is planned for 2027.",
         "howCanIReport": "How can I report security vulnerabilities?",
         "emailSecurityLlFollow": "Email security@ and we'll follow our disclosure policy.",
         "twoStepVerification": "Do you support two-step verification?",

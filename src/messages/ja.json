@@ -1541,7 +1541,7 @@
         "doesPulseConductPenetration": "侵入テストは行っていますか？",
         "annualThirdPartyPenetration": "年次で第三者による侵入テストを実施する計画です。",
         "doesPulseHaveAny": "セキュリティ認証はありますか？",
-        "soc2TypeIi": "現在、第三者認証は取得していません。ISO/IEC 27001（ISMS）の認証取得に向けて準備を進めています。SOC 2 Type II も準備中です。",
+        "soc2TypeIi": "ISO/IEC 27001（ISMS）の認証取得を進めています。SOC 2 は 2027 年に予定しています。",
         "howCanIReport": "脆弱性の報告方法は？",
         "emailSecurityLlFollow": "security@ 宛にご連絡ください。開示ポリシーに沿って対応します。",
         "twoStepVerification": "二段階認証に対応していますか？",
