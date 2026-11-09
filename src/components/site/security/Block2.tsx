@@ -69,6 +69,23 @@ export function Block2() {
                 {t("notesStoredRegionVirtual")}
               </li>
             </ul>
+            <h2 id="iso27001" style={{ scrollMarginTop: "110px" }}>
+              {t("iso27001")}
+            </h2>
+            <ul>
+              <li>
+                {t("iso27001Status")}
+              </li>
+              <li>
+                {t("iso27001Controls")}
+              </li>
+              <li>
+                {t("iso27001Isms")}
+              </li>
+              <li>
+                {t("iso27001Timeline")}
+              </li>
+            </ul>
             <h2>
               {t("reHereIfNeed")}
             </h2>
@@ -81,6 +98,36 @@ export function Block2() {
             </ul>
           </div>
           <div style={{ display: "grid", gap: "16px", position: "sticky", top: "110px" }}>
+            <div className="card">
+              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                <span className="ic" style={{ borderRadius: "50%" }}>
+                  <svg
+                    className=""
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="5" y="10" width="14" height="11" rx="2" />
+                    <path d="M8 10V7a4 4 0 018 0v3" />
+                  </svg>
+                </span>
+                <div>
+                  <b style={{ fontWeight: "500" }}>
+                    ISO/IEC 27001
+                  </b>
+                  <p>
+                    {t("iso27001Card")}
+                  </p>
+                  <a className="link small" href="#iso27001">
+                    {t("iso27001Link")}
+                  </a>
+                </div>
+              </div>
+            </div>
             <div className="card">
               <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                 <span className="ic" style={{ borderRadius: "50%" }}>
