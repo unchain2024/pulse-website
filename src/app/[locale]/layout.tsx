@@ -26,7 +26,6 @@ export async function generateMetadata({
   return {
     title: { default: t("title"), template: "%s" },
     description: t("description"),
-    icons: { icon: "/icon.svg" },
   };
 }
 
