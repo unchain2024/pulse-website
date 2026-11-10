@@ -24,10 +24,32 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "meta" });
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: { default: t("title"), template: "%s" },
     description: t("description"),
+    applicationName: "Pulse",
+    openGraph: {
+      siteName: "Pulse",
+      type: "website",
+      title: t("title"),
+      description: t("description"),
+      images: [{ url: LOGO_PATH, width: 512, height: 512, alt: "Pulse" }],
+    },
+    twitter: { card: "summary", images: [LOGO_PATH] },
   };
 }
+
+// Google's OAuth brand review checks that the consent-screen logo is the one
+// this domain presents as its own; the Organization logo makes that explicit.
+const SITE_URL = "https://www.pulse.co.jp";
+const LOGO_PATH = "/assets/pulse-logo.png";
+const ORGANIZATION_LD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Pulse",
+  url: SITE_URL,
+  logo: `${SITE_URL}${LOGO_PATH}`,
+});
 
 export default async function LocaleLayout({
   children,
@@ -47,6 +69,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} data-lang={locale}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: ORGANIZATION_LD }}
+        />
         <a className="skip-link" href="#main-content">
           {t("skipToContent")}
         </a>
